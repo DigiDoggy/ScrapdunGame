@@ -9,6 +9,7 @@ public class Main {
 
     NpcOption();
 
+
     }
 
     //Actions with NPCs with input validation
