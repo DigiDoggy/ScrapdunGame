@@ -1,7 +1,12 @@
 package game;
 
 import java.util.Scanner;
-
+/*
+TODO:
+ 1.First menu
+ 2.Fight method ( mb going to other new class)
+ 3. Think about the dependencies of classes on each other and perhaps use an abstract class. (for heroes and items)
+ */
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
