@@ -5,10 +5,10 @@ todo
  2.Create fight system (random hit and random block)
  3. Choice of ammunition based on random.
  */
-public class Npc {
+public class Npc extends AbstractPlayers{
 
-    String NpcName = " ";
-    int health = 100;
+    String npcName = " ";
+
 
 
 }

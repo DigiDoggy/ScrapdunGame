@@ -15,8 +15,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Player.playerName();
-        NpcOption();
+        greetings();
+//        Player.playerName();
+//        NpcOption();
 
 
     }
@@ -56,23 +57,41 @@ public class Main {
 
     }
 
-    // Game hello delay
-    public static void loadingAction() {
-        String hello = "Hello Guys!";
-
+    // Game greetings with delay
+    public static void greetings() {
+        String hello = "Добро пожаловать в игру. Бл*!!!";
+        String welcome = "Welcome to the game.";
+        String tab = "\t";
+//tab for writing text in the centre
+        for (int i = 10; i>=0;i--){
+            System.out.print(tab);
+        }
+        // for little joke
         for (int i = 0; i < hello.length(); i++) {
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            loading(150);
 
             System.out.print(hello.charAt(i));
-
         }
-
+        for (int i = 0; i < hello.length(); i++) {
+            loading(50);
+            System.out.print("\b");
+        }
+// greetings text
+        for (int i = 0; i < welcome.length();i++){
+            loading(200);
+            System.out.print(welcome.charAt(i));
+        }
         System.out.println();
     }
 
+    // Delay
+    public static void loading(int delay){
+
+        try {
+            Thread.sleep(delay);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

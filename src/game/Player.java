@@ -13,9 +13,8 @@ TODO
  5.
 
  */
-public class Player {
+public class Player extends AbstractPlayers{
     public static Scanner scanner = new Scanner(System.in);
-    int playerHp;
 
 
     public static ArrayList<String> playerName(){
