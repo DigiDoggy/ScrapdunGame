@@ -1,6 +1,8 @@
 package game;
 
+
 import java.util.Scanner;
+
 /*
 TODO:
  1.First menu
@@ -10,35 +12,37 @@ TODO:
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-    NpcOption();
+        Player.playerName();
+        NpcOption();
 
 
     }
 
     //Actions with NPCs with input validation
-    public static void NpcOption(){
+    public static void NpcOption() {
         int choice;
 
         System.out.println("""
                 1.To talk to a warrior\s
                 2.Get into a fight\s
                 3.Leave the warrior\s
-                Make your choice: """);
+                Make your choice:""");
 
         do {
 
-            choice= scanner.nextInt();
+            choice = scanner.nextInt();
 
-            if ((choice < 1) || (choice > 3)){
+            if ((choice < 1) || (choice > 3)) {
                 System.out.println("There is no such option.");
             }
 
-        }while ((choice < 1) || (choice > 3));
+        } while ((choice < 1) || (choice > 3));
 
 
-        switch (choice){
+        switch (choice) {
             case 1:
                 System.out.println("hey");
                 //method for Talk
@@ -51,5 +55,24 @@ public class Main {
         }
 
     }
+
+    // Game hello delay
+    public static void loadingAction() {
+        String hello = "Hello Guys!";
+
+        for (int i = 0; i < hello.length(); i++) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.print(hello.charAt(i));
+
+        }
+
+        System.out.println();
+    }
+
 
 }
