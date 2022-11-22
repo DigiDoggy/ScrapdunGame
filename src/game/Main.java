@@ -15,12 +15,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        greetings();
-//        Player.playerName();
-//        NpcOption();
-
+   //     greetings();
+      Player.playerName();
+       NpcOption();
 
     }
+
+
 
     //Actions with NPCs with input validation
     public static void NpcOption() {
