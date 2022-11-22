@@ -45,7 +45,7 @@ public class Main {
 
         switch (choice) {
             case 1:
-                System.out.println("hey");
+                Npc.npcStory();
                 //method for Talk
                 break;
             case 2:
@@ -83,7 +83,6 @@ public class Main {
         }
         System.out.println();
     }
-
     // Delay
     public static void loading(int delay){
 

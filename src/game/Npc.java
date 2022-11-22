@@ -9,6 +9,11 @@ public class Npc extends AbstractPlayers{
 
     String npcName = " ";
 
+    // Story of NPC life/ going to main menu
+public static void npcStory(){
+    System.out.println("Story of my life");
+}
+
 
 
 }
