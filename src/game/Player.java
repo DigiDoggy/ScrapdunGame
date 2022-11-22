@@ -16,17 +16,14 @@ TODO
 public class Player extends AbstractPlayers{
     public static Scanner scanner = new Scanner(System.in);
 
+// find out the name of the player
+    public static String playerName(){
 
-    public static ArrayList<String> playerName(){
-        ArrayList<String> player = new ArrayList<>();
         System.out.println("Hello new hero of that danger word.");
         System.out.println("Enter your name: ");
-        String pName = scanner.nextLine();
-        player.add(pName);
-        System.out.println("Where are u from " + pName);
-        String place = scanner.nextLine();
-        player.add(place);
+        String playerName = scanner.nextLine();
 
-        return player;
+
+        return playerName;
     }
 }

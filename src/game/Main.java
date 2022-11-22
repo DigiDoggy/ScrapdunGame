@@ -1,6 +1,7 @@
 package game;
 
 
+
 import java.util.Scanner;
 
 /*
@@ -13,17 +14,17 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        greetings();
+//        greetings();
 //        Player.playerName();
-//        NpcOption();
+        NpcOption();
 
 
     }
 
     //Actions with NPCs with input validation
-    public static void NpcOption() {
+    public static void NpcOption(){
         int choice;
 
         System.out.println("""
@@ -32,16 +33,28 @@ public class Main {
                 3.Leave the warrior\s
                 Make your choice:""");
 
+
+        // надо Обезопасить ввод от ошибки ( Если вбивается тип String) -----------------------------------------------------------------------
+
+
+//        while (true){
+//            try {
+//                choice=scanner.nextInt();
+//            } catch (Exception e){
+//                System.out.println("Choose from options 1, 2, 3:");
+//            }
+//        }
+
+
         do {
 
-            choice = scanner.nextInt();
+        choice=scanner.nextInt();
+                if ((choice < 1) || (choice > 3)){
+                    System.out.println("There is no such option.");
+                }
 
-            if ((choice < 1) || (choice > 3)) {
-                System.out.println("There is no such option.");
-            }
 
         } while ((choice < 1) || (choice > 3));
-
 
         switch (choice) {
             case 1:
@@ -49,11 +62,12 @@ public class Main {
                 //method for Talk
                 break;
             case 2:
-                //Method for fight
+                Npc.fight();
                 break;
             case 3:
                 break;
         }
+            
 
     }
 
