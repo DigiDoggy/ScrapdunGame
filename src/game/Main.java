@@ -19,7 +19,8 @@ public class Main {
 //        greetings();
 //        Player.createName();
 //        NpcOption();
-        Player.equipment();
+//        Player.equipment();
+        Weapon.weapons();
 
 
     }
