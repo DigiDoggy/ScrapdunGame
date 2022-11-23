@@ -36,6 +36,7 @@ public class Main {
                 3.Leave the warrior\s
                 Make your choice:""");
 
+        //git test
 // checking the entered number for (type and validity of numbers)
 
         do {
