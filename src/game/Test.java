@@ -1,6 +1,6 @@
 package game;
 
-import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -9,7 +9,7 @@ public class Test {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
-       check();
+//       check();
     }
 
     public static int check() {
@@ -27,27 +27,10 @@ public class Test {
 
         return number;
     }
-
-//    public static void backspace(){
-//        String test = "test";
-//        for (int i=0; i<test.length();i++){
-//            try {
-//                Thread.sleep(200);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            System.out.print(test.charAt(i));
-//        }
-//        for (int i=0; i<test.length();i++){
-//            try {
-//                Thread.sleep(200);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            System.out.print("\b");
-//        }
-//
-//    }
+    public static int Random(int number){
+        Random random = new Random();
+        return random.nextInt(number);
+    }
 
 
 
