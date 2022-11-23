@@ -1,36 +1,49 @@
 package game;
 
 public class Armor {
-    // def zna4it deffence of armor
-    private String nameOfArmor;
-    private int def;
-    private String type;
 
-    //setters
-    public void setNameOfArmor(String nameOfArmor) {
-        this.nameOfArmor = nameOfArmor;
-    }
+    protected String nameOfArmor;
+    protected int def;
+    protected String type;
 
-    public void setDef(int def) {
+    // armor constructor
+    public Armor (String nameOfArmor,int def, String type){
+        this.nameOfArmor =nameOfArmor;
+        this.type = type;
         this.def = def;
     }
-
-    public void setType(String type) {
-        this.type = type;
+// toString - realisation for armor constructor
+    public String toString() {
+        return "Name of armor - " + nameOfArmor
+                + " |  Defence - " + def
+                + " |  Type - " + type  ;
     }
 
-    //getters
-    public String getNameOfArmor(String nameOfArmor) {
-        return nameOfArmor;
-    }
-
-    public int getDef() {
-        return def;
-    }
-
-    public String getType(String type) {
-        return type;
-    }
+    //setters
+//    public void setNameOfArmor(String nameOfArmor) {
+//        this.nameOfArmor = nameOfArmor;
+//    }
+//
+//    public void setDef(int def) {
+//        this.def = def;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
+//
+//    //getters
+//    public String getNameOfArmor(String nameOfArmor) {
+//        return nameOfArmor;
+//    }
+//
+//    public int getDef() {
+//        return def;
+//    }
+//
+//    public String getType(String type) {
+//        return type;
+//    }
 
     public String printArmorInfo() {
         System.out.println("Your have found new eqipment : ");
@@ -41,6 +54,8 @@ public class Armor {
         return null;
 
     }
+
+
 }
 
 

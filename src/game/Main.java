@@ -18,7 +18,8 @@ public class Main {
 
 //        greetings();
 //        Player.playerName();
-        NpcOption();
+//        NpcOption();
+        Player.equipment();
 
 
     }
