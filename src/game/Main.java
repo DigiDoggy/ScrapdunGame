@@ -32,18 +32,7 @@ public class Main {
                 3.Leave the warrior\s
                 Make your choice:""");
 
-
-        // надо Обезопасить ввод от ошибки ( Если вбивается тип String) -----------------------------------------------------------------------
-
-
-//        while (true){
-//            try {
-//                choice=scanner.nextInt();
-//            } catch (Exception e){
-//                System.out.println("Choose from options 1, 2, 3:");
-//            }
-//        }
-
+// checking the entered number for (type and validity of numbers)
 
         do {
             choice = validatesInputNumber();
@@ -65,7 +54,6 @@ public class Main {
             case 3:
                 break;
         }
-
 
     }
 
