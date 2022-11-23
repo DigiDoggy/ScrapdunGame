@@ -1,7 +1,6 @@
 package game;
 
 
-
 import java.util.Scanner;
 
 /*
@@ -14,7 +13,7 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
 //        greetings();
 //        Player.playerName();
@@ -24,7 +23,7 @@ public class Main {
     }
 
     //Actions with NPCs with input validation
-    public static void NpcOption(){
+    public static void NpcOption() {
         int choice;
 
         System.out.println("""
@@ -47,12 +46,11 @@ public class Main {
 
 
         do {
+            choice = validatesInputNumber();
 
-        choice=scanner.nextInt();
-                if ((choice < 1) || (choice > 3)){
-                    System.out.println("There is no such option.");
-                }
-
+            if ((choice < 1) || (choice > 3)) {
+                System.out.println("There is no such option.");
+            }
 
         } while ((choice < 1) || (choice > 3));
 
@@ -67,7 +65,7 @@ public class Main {
             case 3:
                 break;
         }
-            
+
 
     }
 
@@ -77,7 +75,7 @@ public class Main {
         String welcome = "Welcome to the game.";
         String tab = "\t";
 //tab for writing text in the centre
-        for (int i = 10; i>=0;i--){
+        for (int i = 10; i >= 0; i--) {
             System.out.print(tab);
         }
         // for little joke
@@ -91,20 +89,38 @@ public class Main {
             System.out.print("\b");
         }
 // greetings text
-        for (int i = 0; i < welcome.length();i++){
+        for (int i = 0; i < welcome.length(); i++) {
             loading(200);
             System.out.print(welcome.charAt(i));
         }
         System.out.println();
     }
+
     // Delay
-    public static void loading(int delay){
+    public static void loading(int delay) {
 
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    //checks input for a number
+    public static int validatesInputNumber() {
+        int numb;
+        int number = 0;
+        do {
+            numb = 0;
+            try {
+                number = scanner.nextInt();
+            } catch (Exception e) {
+                System.out.printf("%s - is not an integer.%n", scanner.next());
+                numb = 1;
+            }
+        } while (numb == 1);
+
+        return number;
     }
 
 }
