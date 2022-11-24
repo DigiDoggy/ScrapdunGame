@@ -22,7 +22,7 @@ public class Main {
 //        NpcOption();
 //        Player.equipment();
 //        Weapon.weapons();
-        Weapon.weaponInfo(Weapon.weapons(),(Weapon p)->{ return Boolean.parseBoolean(p.nameOfWeapon);});
+
 
 
     }

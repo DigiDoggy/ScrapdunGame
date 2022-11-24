@@ -10,13 +10,10 @@ public class Test {
 
     public static void main(String[] args) {
 
-        string();
+
 //       check();
     }
 
-    public static void string(){
-        System.out.println(Weapon.weapons());
-    }
 
     public static int check() {
         int numb;
