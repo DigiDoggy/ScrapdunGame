@@ -39,7 +39,7 @@ abstract class Equipment {
     public String toString() {
         if (nameOfArmor==null){
             return "Equipment{" +
-                    ", nameOfWeapon='" + nameOfWeapon + '\'' +
+                    " nameOfWeapon='" + nameOfWeapon + '\'' +
                     ", typeOfWeapon='" + typeOfWeapon + '\'' +
                     ", dmg=" + dmg +
                     ", crtCh=" + crtCh +

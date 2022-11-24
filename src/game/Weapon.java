@@ -23,9 +23,7 @@ public class Weapon extends Equipment {
         weapon.add(bow);
         weapon.add(dagger);
 // Loop for check
-        for (Weapon nameOfWeapon : weapon) {
-            System.out.println(nameOfWeapon);
-        }
+
         return weapon;
     }
 
