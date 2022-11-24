@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Armor extends Equipment{
     //Constructor for armor
-    public Armor(String nameOfArmor, int def, String type) {
-        super(nameOfArmor, def, type);
+    public Armor(String nameOfArmor, int def, String type,String position) {
+        super(nameOfArmor, def, type, position);
     }
 
     //Armor creating for usage
 public static void lonelyScaledArmor() {
-    Armor armor = new Armor("Lonely Scaled ChestGuard", 150, "Heavy");
-    Armor armor1 = new Armor("Lonely Scaled Legs", 40, "Heavy");
-    Armor armor2 = new Armor("Lonely Scaled Gloves", 25, "Heavy");
-    Armor armor3 = new Armor("Lonely Scaled Helmet", 35, "Heavy");
+    Armor armor = new Armor("Lonely Scaled ChestGuard", 150, "Heavy", "Chest");
+    Armor armor1 = new Armor("Lonely Scaled Legs", 40, "Heavy", "Legs");
+    Armor armor2 = new Armor("Lonely Scaled Gloves", 25, "Heavy", "Hands");
+    Armor armor3 = new Armor("Lonely Scaled Helmet", 35, "Heavy", "Helmet");
 
     ArrayList<Armor> lonelyScaled = new ArrayList<>();
     lonelyScaled.add(armor);
@@ -31,10 +31,10 @@ public static void lonelyScaledArmor() {
 }
 
 public static void shadowClothArmor(){
-    Armor armor4 = new Armor("Shadow Cloth Wraps", 70, "Light");
-    Armor armor5 = new Armor("Shadow Cloth Hat", 20, "Light");
-    Armor armor6 = new Armor("Shadow Cloth Gloves", 12, "Light");
-    Armor armor7 = new Armor("Shadow Cloth Boots", 10, "Light");
+    Armor armor4 = new Armor("Shadow Cloth Wraps", 70, "Light","Chest");
+    Armor armor5 = new Armor("Shadow Cloth Hat", 20, "Light","Helmet");
+    Armor armor6 = new Armor("Shadow Cloth Gloves", 12, "Light","Hands");
+    Armor armor7 = new Armor("Shadow Cloth Boots", 10, "Light","Legs");
 
     ArrayList<Armor> shadow = new ArrayList<>();
     shadow.add(armor4);
@@ -52,10 +52,10 @@ public static void shadowClothArmor(){
 
 public static void major(){
 
-    Armor armor8 = new Armor("Major Arcana Robe", 50, "Cotton");
-    Armor armor9 = new Armor("Major Arcana Circlet", 50, "Cotton");
-    Armor armor10 = new Armor("Major Arcana Gloves", 50, "Cotton");
-    Armor armor11 = new Armor("Major Arcana Boots", 50, "Cotton");
+    Armor armor8 = new Armor("Major Arcana Robe", 50, "Cotton","Chest");
+    Armor armor9 = new Armor("Major Arcana Circlet", 50, "Cotton","Helmet");
+    Armor armor10 = new Armor("Major Arcana Gloves", 50, "Cotton","Hands");
+    Armor armor11 = new Armor("Major Arcana Boots", 50, "Cotton","Legs");
 
     ArrayList<Armor> major = new ArrayList<>();
     major.add(armor8);

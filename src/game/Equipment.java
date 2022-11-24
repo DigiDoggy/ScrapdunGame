@@ -1,5 +1,8 @@
 package game;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 abstract class Equipment {
 
 
@@ -7,6 +10,7 @@ abstract class Equipment {
     protected String nameOfArmor;
     protected int def;
     protected String type;
+    protected String position;
     //weapon
     protected String nameOfWeapon;
     protected String typeOfWeapon;
@@ -14,10 +18,11 @@ abstract class Equipment {
     protected  int crtCh;
 
     //constructor armor
-    public Equipment(String nameOfArmor, int def, String type) {
+    public Equipment(String nameOfArmor, int def, String type,String position) {
         this.nameOfArmor = nameOfArmor;
         this.def = def;
         this.type = type;
+        this.position= position;
     }
     //constructor weapon
 
@@ -32,14 +37,34 @@ abstract class Equipment {
 
     @Override
     public String toString() {
-        return "Equipment{" +
-                "nameOfArmor='" + nameOfArmor + '\'' +
-                ", def=" + def +
-                ", type='" + type + '\'' +
-                ", nameOfWeapon='" + nameOfWeapon + '\'' +
-                ", typeOfWeapon='" + typeOfWeapon + '\'' +
-                ", dmg=" + dmg +
-                ", crtCh=" + crtCh +
-                '}';
+        if (nameOfArmor==null){
+            return "Equipment{" +
+                    ", nameOfWeapon='" + nameOfWeapon + '\'' +
+                    ", typeOfWeapon='" + typeOfWeapon + '\'' +
+                    ", dmg=" + dmg +
+                    ", crtCh=" + crtCh +
+                    '}';
+        }else {
+            return "Equipment{" +
+                    "nameOfArmor='" + nameOfArmor + '\'' +
+                    ", def=" + def +
+                    ", type='" + type + '\'' +
+                    ", position='" + position + '\'' +
+                    '}';
+        }
+
+
+//        }
+//        return "Equipment{" +
+//                "nameOfArmor='" + nameOfArmor + '\'' +
+//                ", def=" + def +
+//                ", type='" + type + '\'' +
+//                ", position='" + position + '\'' +
+//                ", nameOfWeapon='" + nameOfWeapon + '\'' +
+//                ", typeOfWeapon='" + typeOfWeapon + '\'' +
+//                ", dmg=" + dmg +
+//                ", crtCh=" + crtCh +
+//                '}';
     }
+
 }

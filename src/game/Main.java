@@ -1,6 +1,7 @@
 package game;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -20,7 +21,8 @@ public class Main {
 //        Player.createName();
 //        NpcOption();
 //        Player.equipment();
-        Weapon.weapons();
+//        Weapon.weapons();
+        Weapon.weaponInfo(Weapon.weapons(),(Weapon p)->{ return Boolean.parseBoolean(p.nameOfWeapon);});
 
 
     }
