@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class KostjaTestClass {
 
-    public static void main(String[] args) {
+
 
 /*
         Armor armor1 = new Armor();
@@ -62,10 +62,10 @@ public class KostjaTestClass {
 
         System.out.println(weapon1.printWeaponInfo()); */
 
-        //fighting system my way
+    //fighting system my way
 
-        // нажми цифру 1 в консоле для удара или цифру 2 для удара .
-
+    // нажми цифру 1 в консоле для удара или цифру 2 для удара .
+    public static void isGame() {
         int playerHealt = 100;
         int opHealth = 100;
         boolean game = true;
@@ -181,9 +181,9 @@ public class KostjaTestClass {
                     break;
                 case 4:
                     System.out.println("Swagger punched you!");
-                    System.out.println("Swagger hits u -17 dmg");
+                    System.out.println("Swagger hits u 0 dmg");
                     System.out.println(" ");
-                    for (int i = 1; i <= 17; i++) {
+                    for (int i = 1; i <= 1; i++) {
                         playerHealt--;
                     }
                     break;
@@ -217,11 +217,18 @@ public class KostjaTestClass {
             } else if (playerHealt > 1) {
                 game = true;
             }
+
+            if (playerHealt >= 50) {
+                System.out.println("|========      |" + playerHealt);
+
+            }
         }
 
 
     }
+
 }
+
 
 
 

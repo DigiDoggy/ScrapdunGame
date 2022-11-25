@@ -34,6 +34,12 @@ public static void fight(){
     }while ((choice!='y') && (choice!= 'n') );
 
 
+
+
+
+
+
+
 }
 
 

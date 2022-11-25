@@ -20,6 +20,7 @@ public class Main {
         Player.createName();
 //        NpcOption();
 //        Player.equipment();
+        KostjaTestClass.isGame();
 
 
     }
