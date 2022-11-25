@@ -124,6 +124,9 @@ public class KostjaTestClass {
                     kickAttack = random2.nextInt();
 
                 }
+                if (opHealth<=0){
+                    opHealth=0;
+                }
                 System.out.println("Your opponets healts is : " + opHealth);
                 System.out.println(" ");
 
@@ -202,6 +205,9 @@ public class KostjaTestClass {
                     break;
                 default:
                     break;
+            }
+            if(playerHealt < 0 ){
+                playerHealt = 0;
             }
             System.out.println("Your healt is " + playerHealt);
             if (playerHealt <= 0) {
