@@ -20,7 +20,7 @@ public class Armor extends Equipment{
     protected static Armor armorShadowGloves = new Armor("Shadow Cloth Gloves", 12, "Light","Gloves");
     protected static Armor armorShadowBoots = new Armor("Shadow Cloth Boots", 10, "Light","Boots");
 //Robe
-    protected static Armor armorMajorCh = new Armor("Major Arcana Robe", 50, "Cotton","Chest");
+    protected static Armor armorMajorChest = new Armor("Major Arcana Robe", 50, "Cotton","Chest");
     protected static Armor armorMajorHelm = new Armor("Major Arcana Circlet", 50, "Cotton","Helmet");
     protected static Armor armorMajorGloves = new Armor("Major Arcana Gloves", 50, "Cotton","Gloves");
     protected static Armor armorMajorBoots = new Armor("Major Arcana Boots", 50, "Cotton","Boots");

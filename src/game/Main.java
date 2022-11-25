@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
 
+        Player.action1();
 //        greetings();
 //        Player.createName();
 //        NpcOption();
@@ -45,9 +46,8 @@ public class Main {
         do {
             choice = validatesInputNumber();
 
-            if ((choice < 1) || (choice > 3)) {
-                System.out.println("There is no such option.");
-            }
+            choiceFromTo(choice,1,3);
+
 
         } while ((choice < 1) || (choice > 3));
 
@@ -99,6 +99,12 @@ public class Main {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void choiceFromTo(int choice, int number, int num){
+        if ((choice < number) || (choice > num)) {
+            System.out.println("There is no such option.");
         }
     }
 
