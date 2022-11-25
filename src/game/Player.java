@@ -21,6 +21,8 @@ public class Player extends AbstractPlayers {
     private static int playerDef;
     private static ArrayList<String> playerArmor = new ArrayList<>();
 
+    public static ArrayList<String> playerWeapon;
+
 
 
     // find out the name of the player
@@ -104,6 +106,7 @@ public class Player extends AbstractPlayers {
                 System.out.println("Отлично у вас есть полный сет,"+ "\n" +
                         "Но вы нашли еще разного вида оружия");
                 // Вставить перечень оружия
+
                 break;
             case 2:
                 playerArmor.add(Armor.armorLonelyChest.nameOfArmor);

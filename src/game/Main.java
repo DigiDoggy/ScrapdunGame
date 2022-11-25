@@ -17,8 +17,10 @@ public class Main {
     public static void main(String[] args) {
 
 
+        greetings();
+        Player.createName();
         Player.action1();
-//        greetings();
+
 //        Player.createName();
 //        NpcOption();
 //        Player.equipment();
