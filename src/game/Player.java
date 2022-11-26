@@ -19,7 +19,7 @@ public class Player extends AbstractPlayers {
     public static Scanner scanner = new Scanner(System.in);
     private static String playerName;
     private static int playerDef;
-    private static ArrayList<String> playerArmor = new ArrayList<>();
+    public static ArrayList<String> playerArmor = new ArrayList<>();
 
     public static ArrayList<String> playerWeapon;
 
@@ -53,7 +53,7 @@ public class Player extends AbstractPlayers {
 
         switch (choice){
             case 1:
-                choiceSet();
+                Armor.choceArmor();
                 break;
             case 2:
                 System.out.println("You enter the tent and immediately pay attention to the chest.");
@@ -74,74 +74,7 @@ public class Player extends AbstractPlayers {
 
     }
 
-    public static void choiceSet(){
-        System.out.println("You examined the corpse and found:" + "\n" +
-                Armor.armorLonelyChest.nameOfArmor + "\n" +
-                Armor.armorMajorGloves.nameOfArmor + "\n" +
-                Armor.armorShadowBoots.nameOfArmor );
 
-        System.out.println("If you collect a set of armor," + "\n" +
-                " you can get additional characteristics.");
-
-        System.out.println("What kit do you want to build?");
-
-        System.out.println("1.Shadow - Light " + "\n" +
-                "2.Lonely - Heavy"+ "\n" +
-                "3.Major - Cotton (Mage set)" + "\n" +
-                "4.go back");
-
-        int select = Main.validatesInputNumber();
-        Main.choiceFromTo(select,1,4);
-
-        switch (select){
-            case 1:
-                playerArmor.add(Armor.armorShadowBoots.nameOfArmor);
-                playerArmor.add(Armor.armorShadowChest.nameOfArmor);
-                playerArmor.add(Armor.armorShadowGloves.nameOfArmor);
-                playerArmor.add(Armor.armorShadowHelmet.nameOfArmor);
-                System.out.println("Вы решили собрать легкую броню, " + "\n" +
-                        "и для это решили походить по полю битвы и найти оставшиеся" + "\n" +
-                        "части сета.");
-                Main.loading(300);
-                System.out.println("Отлично у вас есть полный сет,"+ "\n" +
-                        "Но вы нашли еще разного вида оружия");
-                // Вставить перечень оружия
-
-                break;
-            case 2:
-                playerArmor.add(Armor.armorLonelyChest.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyHelmet.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyGloves.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyBoots.nameOfArmor);
-                System.out.println("Вы решили собрать тяжелую броню, " + "\n" +
-                        "и для это решили походить по полю битвы и найти оставшиеся" + "\n" +
-                        "части сета.");
-                Main.loading(300);
-                System.out.println("Отлично у вас есть полный сет,"+ "\n" +
-                        "Но вы нашли еще разного вида оружия");
-                // Вставить перечень оружия
-                break;
-            case 3:
-                playerArmor.add(Armor.armorMajorGloves.nameOfArmor);
-                playerArmor.add(Armor.armorMajorChest.nameOfArmor);
-                playerArmor.add(Armor.armorMajorBoots.nameOfArmor);
-                playerArmor.add(Armor.armorMajorHelm.nameOfArmor);
-                System.out.println("Вы решили собрать магический сет, " + "\n" +
-                        "и для это решили походить по полю битвы и найти оставшиеся" + "\n" +
-                        "части сета.");
-                Main.loading(300);
-                System.out.println("Отлично у вас есть полный сет,"+ "\n" +
-                        "вы одели и почувствовали не веданную до этого момента силу, но кроме этого" + "\n" +
-                        "Но вы нашли еще разного вида оружия");
-                // Вставить перечень оружия
-                break;
-            case 4:
-                System.out.println("Need to think.");
-                action1();
-                break;
-
-        }
-    }
     //подсчет защиты игрока.
     public static int playerDefence(){
 

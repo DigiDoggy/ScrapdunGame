@@ -17,14 +17,20 @@ public class Main {
     public static void main(String[] args) {
 
 
-        greetings();
-        Player.createName();
-        Player.action1();
+//        Player.action1();
+        Weapon.choseWeapon();
+
+//        greetings();
+//        Player.createName();
+//        Player.action1();
+
 
 //        Player.createName();
 //        NpcOption();
 //        Player.equipment();
+
 //        Weapon.weapons();
+//        KostjaTestClass.isGame();
 
 
 

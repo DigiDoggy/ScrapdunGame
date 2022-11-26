@@ -1,9 +1,6 @@
 package game;
 
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-
 public class Weapon extends Equipment {
 
     public Weapon(String nameOfWeapon, String typeOfWeapon, int dmg, int crtCh) {
@@ -17,7 +14,7 @@ public class Weapon extends Equipment {
     protected static  Weapon bow = new Weapon("Bow of Light", "Bow", 60, 20);
     protected static  Weapon dagger = new Weapon("Knife of Blood", "Dagger", 24, 46);
 
-    public static void choiseWeapon(){
+    public static void choseWeapon(){
         System.out.println("1. " + axe.nameOfArmor);
         System.out.println("2. " + bow.nameOfArmor);
         System.out.println("3. " + dagger.nameOfArmor);
@@ -32,11 +29,26 @@ public class Weapon extends Equipment {
         switch (choice){
             case 1:
                 Player.playerWeapon.add(axe.nameOfWeapon);
-                System.out.println("Отлично вы выбрали булаву");
+                System.out.println("Great, you chose the mace.");
                 break;
             case 2:
                 Player.playerWeapon.add(bow.nameOfWeapon);
-                System.out.println("Отлично вы выбрали лук");
+                System.out.println("Great, you chose the bow.");
+                break;
+            case 3:
+                Player.playerWeapon.add(dagger.nameOfWeapon);
+                System.out.println("Great, you chose the dagger.");
+                break;
+            case 4:
+                Player.playerWeapon.add(sword.nameOfWeapon);
+                System.out.println("Great, you chose the sword.");
+                break;
+            case 5:
+                Player.playerWeapon.add(staffOfSoul.nameOfWeapon);
+                System.out.println("Great, you chose the staff");
+                break;
+            default:
+                break;
         }
 
     }
