@@ -5,23 +5,26 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
-TODO
- 0.Begin story about player (prison, dungeon etc.)
- 1. Player name  ( need for final result)
- 2. Player hp
- 3. Choice of ammunition based.
- 4. Method of choice(Hit/Block)
+ TODO
+  0.Begin story about player (prison, dungeon etc.)
+  1. Player name  ( need for final result)
+  2. Player hp
+  3. Choice of ammunition based.
+  4. Method of choice(Hit/Block)
  5.
 
  */
-public class Player extends AbstractPlayers {
+public class Player extends Characters {
+
+    public Player(int health, int damage, int crtDamage, int defence) {
+        super(health, damage, crtDamage, defence);
+    }
 
     public static Scanner scanner = new Scanner(System.in);
     private static String playerName;
-    private static int playerDef;
     public static ArrayList<String> playerArmor = new ArrayList<>();
 
-    public static ArrayList<String> playerWeapon;
+    public static ArrayList<String> playerWeapon = new ArrayList<>();
 
 
 
@@ -76,10 +79,10 @@ public class Player extends AbstractPlayers {
 
 
     //подсчет защиты игрока.
-    public static int playerDefence(){
-
-        return playerDef;
-    }
+//    public static int playerDefence(){
+//
+//        return playerDef;
+//    }
 
 
 

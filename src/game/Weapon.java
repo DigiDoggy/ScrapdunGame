@@ -1,11 +1,19 @@
 package game;
 
 
+import java.util.ArrayList;
+
 public class Weapon extends Equipment {
 
     public Weapon(String nameOfWeapon, String typeOfWeapon, int dmg, int crtCh) {
         super(nameOfWeapon, typeOfWeapon, dmg, crtCh);
     }
+
+   public static void some(){
+
+
+   }
+
 
 
     protected static Weapon axe = new Weapon("Axe of Infinity", "Axe", 30, 14);
@@ -29,6 +37,7 @@ public class Weapon extends Equipment {
             case 1:
                 Player.playerWeapon.add(axe.nameOfWeapon);
                 System.out.println("Great, you chose the mace.");
+                Player.action1();
                 break;
             case 2:
                 Player.playerWeapon.add(bow.nameOfWeapon);

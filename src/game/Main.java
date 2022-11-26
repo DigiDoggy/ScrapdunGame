@@ -17,12 +17,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-//        Player.action1();
-        Weapon.choseWeapon();
+        Player.action1();
+//        Weapon.choseWeapon();
 
 //        greetings();
 //        Player.createName();
 //        Player.action1();
+//        NpcOption();
 
 
 //        Player.createName();

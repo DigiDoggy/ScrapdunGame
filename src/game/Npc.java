@@ -8,7 +8,11 @@ todo
  2.Create fight system (random hit and random block)
  3. Choice of ammunition based on random.
  */
-public class Npc extends AbstractPlayers{
+public class Npc extends Characters {
+
+    public Npc(int health, int damage, int crtDamage, int defence) {
+        super(health, damage, crtDamage, defence);
+    }
 
     private static Scanner scanner = new Scanner(System.in);
    private static String npcName = " ";
