@@ -15,15 +15,14 @@ public class Weapon extends Equipment {
     protected static  Weapon dagger = new Weapon("Knife of Blood", "Dagger", 24, 46);
 
     public static void choseWeapon(){
-        System.out.println("1. " + axe.nameOfArmor);
-        System.out.println("2. " + bow.nameOfArmor);
-        System.out.println("3. " + dagger.nameOfArmor);
-        System.out.println("4. " + sword.nameOfArmor);
-        System.out.println("5. " + staffOfSoul.nameOfArmor);
+        System.out.println("1. " + axe.nameOfWeapon);
+        System.out.println("2. " + bow.nameOfWeapon);
+        System.out.println("3. " + dagger.nameOfWeapon);
+        System.out.println("4. " + sword.nameOfWeapon);
+        System.out.println("5. " + staffOfSoul.nameOfWeapon);
 
         System.out.println("Which weapon you need ?");
-        int choice = Main.scanner.nextInt();
-        Main.validatesInputNumber();
+        int choice = Main.validatesInputNumber();
         Main.choiceFromTo(choice,1,5);
 
         switch (choice){

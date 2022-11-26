@@ -111,10 +111,12 @@ public class Main {
     }
 
     public static void choiceFromTo(int choice, int number, int num){
-        if ((choice < number) || (choice > num)) {
-            System.out.println("There is no such option.");
+
+            if ((choice < number) || (choice > num)) {
+                System.out.println("There is no such option.");
+            }
         }
-    }
+
 
     //checks input for a number
     public static int validatesInputNumber() {
