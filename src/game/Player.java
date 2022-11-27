@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Player extends Characters {
 
     public Player(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
-        super(characterName, health, characterWeapon, damage, crtDamage, block, defence);
+        super(health, damage, crtDamage, defence);
     }
     public Player(String armorsHead, String armorBody, String armorLegs, String armorArms) {
         super(armorsHead, armorBody, armorLegs, armorArms);

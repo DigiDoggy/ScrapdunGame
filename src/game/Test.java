@@ -10,7 +10,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-
+        System.out.println(Weapon.createWeaponsList().indexOf(0));
 //       check();
     }
 

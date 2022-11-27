@@ -2,6 +2,8 @@ package game;
 
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Weapon extends Equipment {
 
@@ -61,9 +63,19 @@ public class Weapon extends Equipment {
         }
     }
 
-    public static int weaponDamage(){
-        if (Player.player.characterWeapon.equals(Weapon.axe.nameOfWeapon)) {
-            Player.player.damage = Weapon.axe.dmg;
-        }
+    public static List<Object> createWeaponsList(){
+        List<Object> weaponList = new ArrayList<>();
+        weaponList.add(Weapon.axe);
+        weaponList.add(Weapon.bow);
+        weaponList.add(Weapon.dagger);
+        weaponList.add(Weapon.sword);
+        weaponList.add(Weapon.staffOfSoul);
+        return weaponList;
     }
+//    public static void weaponDamage(){
+//        if (Player.player.characterWeapon.equals(createWeaponsList().){
+//            Player.player.damage = Weapon.axe.dmg;
+//        }
+//
+//    }
 }

@@ -1,7 +1,5 @@
 package game;
 
-import java.util.ArrayList;
-
 abstract class Characters {
 
     protected static String characterName ;
@@ -34,7 +32,7 @@ abstract class Characters {
     // constructor for characteristic
 
 
-    public Characters(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
+    public Characters(int health, int damage, int crtDamage, int defence) {
         this.characterName = characterName;
         this.health = health;
         this.characterWeapon = characterWeapon;
