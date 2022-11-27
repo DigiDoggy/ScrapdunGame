@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 abstract class Characters {
 
-    protected String characterName ;
+    protected static String characterName ;
     protected static int health = 100;
-    protected String weapon ;
-    protected String armorsHead ;
-    protected String armorBody ;
-    protected String armorLegs ;
-    protected String armorArms ;
-    protected int damage = 10;
-    protected int crtDamage = 5;
-    protected String block;
-    protected int defence = 10;
+    protected static String characterWeapon ;
+    protected static String armorsHead ;
+    protected static String armorBody ;
+    protected static String armorLegs ;
+    protected static String armorArms ;
+    protected static int damage = 10;
+    protected static int crtDamage = 5;
+    protected static String block;
+    protected static int defence = 10;
 
 
     //getters and setters (
@@ -30,17 +30,14 @@ abstract class Characters {
 
     // constructor for weapon
 
-    public Characters(String weapon) {
-        this.weapon = weapon;
-    }
 
     // constructor for characteristic
 
 
-    public Characters(String characterName, int health, String weapon, int damage, int crtDamage, String block, int defence) {
+    public Characters(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
         this.characterName = characterName;
         this.health = health;
-        this.weapon = weapon;
+        this.characterWeapon = characterWeapon;
         this.damage = damage;
         this.crtDamage = crtDamage;
         this.block = block;
@@ -52,7 +49,7 @@ abstract class Characters {
         return "Characters{" +
                 "characterName='" + characterName + '\'' +
                 ", health=" + health +
-                ", weapon='" + weapon + '\'' +
+                ", weapon='" + characterWeapon + '\'' +
                 ", damage=" + damage +
                 ", crtDamage=" + crtDamage +
                 ", block='" + block + '\'' +

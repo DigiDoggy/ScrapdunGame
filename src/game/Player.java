@@ -16,8 +16,8 @@ import java.util.Scanner;
  */
 public class Player extends Characters {
 
-    public Player(String characterName, int health, String weapon, int damage, int crtDamage, String block, int defence) {
-        super(characterName, health, weapon, damage, crtDamage, block, defence);
+    public Player(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
+        super(characterName, health, characterWeapon, damage, crtDamage, block, defence);
     }
     public Player(String armorsHead, String armorBody, String armorLegs, String armorArms) {
         super(armorsHead, armorBody, armorLegs, armorArms);
@@ -25,12 +25,11 @@ public class Player extends Characters {
 
 
     public static Scanner scanner = new Scanner(System.in);
-    protected static String playerName;
+
     public static ArrayList<String> playerArmor = new ArrayList<>();
 
-    public static String playerWeapon ;
 
-//     public static Player player = new Player(playerName, health, playerWeapon,  );
+     public static Player player = new Player(characterName, health, characterWeapon,damage ,crtDamage,block,defence );
 
 
 
@@ -39,12 +38,12 @@ public class Player extends Characters {
 
         System.out.println("Hello new hero of that danger word.");
         System.out.println("Enter your name: ");
-        playerName = scanner.nextLine();
-        System.out.println(playerName + "you see many corpses after the battle, "+"\n" +
+        characterName = scanner.nextLine();
+        System.out.println(characterName + "you see many corpses after the battle, "+"\n" +
                 "an empty military tent and a bush of berries growing next to you.");
         System.out.println("What will you do?");
 
-        return playerName;
+        return characterName;
     }
     //method for user who find some item
     public static void action1(){

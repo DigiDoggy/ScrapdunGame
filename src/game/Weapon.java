@@ -36,29 +36,34 @@ public class Weapon extends Equipment {
 
         switch (choice){
             case 1:
-                Player.playerWeapon = axe.nameOfWeapon;
-                System.out.println("Great, you chose the mace.");
+                Player.player.characterWeapon = axe.nameOfWeapon;
+                System.out.println("Great, you chose the mace." + Player.player.characterWeapon);
                 Player.action1();
                 break;
             case 2:
-                Player.playerWeapon = bow.nameOfWeapon;
-                System.out.println("Great, you chose the bow.");
+                Player.player.characterWeapon = bow.nameOfWeapon;
+                System.out.println("Great, you chose the bow." + Player.player.characterWeapon);
                 break;
             case 3:
-                Player.playerWeapon = dagger.nameOfWeapon;
-                System.out.println("Great, you chose the dagger.");
+                Player.player.characterWeapon = dagger.nameOfWeapon;
+                System.out.println("Great, you chose the dagger." + Player.player.characterWeapon);
                 break;
             case 4:
-                Player.playerWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the sword.");
+                Player.player.characterWeapon = sword.nameOfWeapon;
+                System.out.println("Great, you chose the sword." + Player.player.characterWeapon);
                 break;
             case 5:
-                Player.playerWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the staff");
+                Player.player.characterWeapon = sword.nameOfWeapon;
+                System.out.println("Great, you chose the staff" + Player.player.characterWeapon);
                 break;
             default:
                 break;
         }
+    }
 
+    public static int weaponDamage(){
+        if (Player.player.characterWeapon.equals(Weapon.axe.nameOfWeapon)) {
+            Player.player.damage = Weapon.axe.dmg;
+        }
     }
 }

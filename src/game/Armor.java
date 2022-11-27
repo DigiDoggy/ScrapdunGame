@@ -7,7 +7,7 @@ public class Armor extends Equipment{
     public Armor(String nameOfArmor, int def, String type,String position) {
         super(nameOfArmor, def, type, position);
     }
-
+//Параметр "Урон броне противника" есть на штурмовых винтовках - он варьируется на PTS 1.5 от 17.5% до 24%, а также на снаряжении. С учетом этого, общий параметр "Урон броне противника" можно поднять в среднем до 40%. Тогда итоговое смягчение урона броней будет: Броня%_итог3 = 60% / 100 * (100 - (40% * 0.3) = 52,8%.
     //Armor creating for usage
 //Heavy
     protected static Armor armorLonelyChest = new Armor("Lonely Scaled ChestGuard", 150, "Heavy", "Chest");
