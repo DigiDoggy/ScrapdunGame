@@ -9,6 +9,7 @@ public class Weapon extends Equipment {
         super(nameOfWeapon, typeOfWeapon, dmg, crtCh);
     }
 
+
    public static void some(){
 
 
@@ -35,24 +36,24 @@ public class Weapon extends Equipment {
 
         switch (choice){
             case 1:
-                Player.playerWeapon.add(axe.nameOfWeapon);
+                Player.playerWeapon = axe.nameOfWeapon;
                 System.out.println("Great, you chose the mace.");
                 Player.action1();
                 break;
             case 2:
-                Player.playerWeapon.add(bow.nameOfWeapon);
+                Player.playerWeapon = bow.nameOfWeapon;
                 System.out.println("Great, you chose the bow.");
                 break;
             case 3:
-                Player.playerWeapon.add(dagger.nameOfWeapon);
+                Player.playerWeapon = dagger.nameOfWeapon;
                 System.out.println("Great, you chose the dagger.");
                 break;
             case 4:
-                Player.playerWeapon.add(sword.nameOfWeapon);
+                Player.playerWeapon = sword.nameOfWeapon;
                 System.out.println("Great, you chose the sword.");
                 break;
             case 5:
-                Player.playerWeapon.add(staffOfSoul.nameOfWeapon);
+                Player.playerWeapon = sword.nameOfWeapon;
                 System.out.println("Great, you chose the staff");
                 break;
             default:

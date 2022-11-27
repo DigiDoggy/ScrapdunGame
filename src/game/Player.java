@@ -16,15 +16,21 @@ import java.util.Scanner;
  */
 public class Player extends Characters {
 
-    public Player(int health, int damage, int crtDamage, int defence) {
-        super(health, damage, crtDamage, defence);
+    public Player(String characterName, int health, String weapon, int damage, int crtDamage, String block, int defence) {
+        super(characterName, health, weapon, damage, crtDamage, block, defence);
+    }
+    public Player(String armorsHead, String armorBody, String armorLegs, String armorArms) {
+        super(armorsHead, armorBody, armorLegs, armorArms);
     }
 
+
     public static Scanner scanner = new Scanner(System.in);
-    private static String playerName;
+    protected static String playerName;
     public static ArrayList<String> playerArmor = new ArrayList<>();
 
-    public static ArrayList<String> playerWeapon = new ArrayList<>();
+    public static String playerWeapon ;
+
+//     public static Player player = new Player(playerName, health, playerWeapon,  );
 
 
 
