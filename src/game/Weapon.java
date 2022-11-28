@@ -3,7 +3,10 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
+import static game.Characters.characterWeapon;
+import static game.Player.player;
+
 
 public class Weapon extends Equipment {
 
@@ -38,44 +41,54 @@ public class Weapon extends Equipment {
 
         switch (choice){
             case 1:
-                Player.player.characterWeapon = axe.nameOfWeapon;
-                System.out.println("Great, you chose the mace." + Player.player.characterWeapon);
+                player.characterWeapon = axe.nameOfWeapon;
+                System.out.println("Great, you chose the mace." + player.characterWeapon);
                 Player.action1();
                 break;
             case 2:
-                Player.player.characterWeapon = bow.nameOfWeapon;
-                System.out.println("Great, you chose the bow." + Player.player.characterWeapon);
+                player.characterWeapon = bow.nameOfWeapon;
+                System.out.println("Great, you chose the bow." + player.characterWeapon);
                 break;
             case 3:
-                Player.player.characterWeapon = dagger.nameOfWeapon;
-                System.out.println("Great, you chose the dagger." + Player.player.characterWeapon);
+                player.characterWeapon = dagger.nameOfWeapon;
+                System.out.println("Great, you chose the dagger." + player.characterWeapon);
                 break;
             case 4:
-                Player.player.characterWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the sword." + Player.player.characterWeapon);
+                player.characterWeapon = sword.nameOfWeapon;
+                System.out.println("Great, you chose the sword." + player.characterWeapon);
                 break;
             case 5:
-                Player.player.characterWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the staff" + Player.player.characterWeapon);
+                player.characterWeapon = sword.nameOfWeapon;
+                System.out.println("Great, you chose the staff" + player.characterWeapon);
                 break;
             default:
                 break;
         }
     }
 
-    public static List<Object> createWeaponsList(){
-        List<Object> weaponList = new ArrayList<>();
-        weaponList.add(Weapon.axe);
-        weaponList.add(Weapon.bow);
-        weaponList.add(Weapon.dagger);
-        weaponList.add(Weapon.sword);
-        weaponList.add(Weapon.staffOfSoul);
+    public static List<Equipment> createWeaponsList(){
+        List<Equipment> weaponList = new ArrayList<>();
+        weaponList.add(axe);
+        weaponList.add(bow);
+        weaponList.add(dagger);
+        weaponList.add(sword);
+        weaponList.add(staffOfSoul);
+
         return weaponList;
+
     }
-//    public static void weaponDamage(){
-//        if (Player.player.characterWeapon.equals(createWeaponsList().){
-//            Player.player.damage = Weapon.axe.dmg;
-//        }
-//
-//    }
+
+
+    public static void weaponDamage(){
+        player.characterWeapon = "Bow of Light";
+
+        for (Equipment weapon: createWeaponsList()) {
+            if (weapon.nameOfWeapon.equalsIgnoreCase(player.characterWeapon)){
+                player.damage += weapon.dmg;
+                System.out.println(player.damage);
+            }
+        }
+
+
+    }
 }

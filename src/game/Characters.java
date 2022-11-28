@@ -9,7 +9,7 @@ abstract class Characters {
     protected static String armorBody ;
     protected static String armorLegs ;
     protected static String armorArms ;
-    protected static int damage = 10;
+    public static int damage = 10;
     protected static int crtDamage = 5;
     protected static String block;
     protected static int defence = 10;

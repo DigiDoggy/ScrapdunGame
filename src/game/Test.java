@@ -1,5 +1,6 @@
 package game;
 
+import javax.xml.namespace.QName;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,7 +11,8 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println(Weapon.createWeaponsList().indexOf(0));
+
+        Weapon.weaponDamage();
 //       check();
     }
 

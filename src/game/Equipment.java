@@ -12,7 +12,7 @@ abstract class Equipment {
     protected String type;
     protected String position;
     //weapon
-    protected String nameOfWeapon;
+    protected  String nameOfWeapon;
     protected String typeOfWeapon;
     protected int dmg;
     protected  int crtCh;
