@@ -18,6 +18,8 @@ public class Main {
 
 
         Player.action1();
+        System.out.println(Player.player);
+        System.out.println(Player.playerArmor.toString());
 //        Weapon.choseWeapon();
 
 //        greetings();

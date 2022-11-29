@@ -31,6 +31,7 @@ public class Player extends Characters {
 
      protected static Player player = new Player(characterName, health,characterWeapon ,damage ,crtDamage,block,defence );
 
+
 //    characterName
 
 

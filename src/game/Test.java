@@ -12,7 +12,8 @@ public class Test {
     public static void main(String[] args) {
 
 
-        Weapon.weaponDamage();
+        Armor.defenceArmor();
+//        Weapon.weaponDamage();
 //       check();
     }
 
