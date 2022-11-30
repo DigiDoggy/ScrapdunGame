@@ -1,10 +1,7 @@
-package game;
+package digidoggy.scrapdun;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static game.Player.player;
-import static game.Player.playerArmor;
 
 public class Armor extends Equipment {
     //Constructor for armor

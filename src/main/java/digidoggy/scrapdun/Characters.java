@@ -1,4 +1,4 @@
-package game;
+package digidoggy.scrapdun;
 
 abstract class Characters {
 

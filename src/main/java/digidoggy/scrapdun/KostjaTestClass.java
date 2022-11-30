@@ -1,4 +1,4 @@
-package game;
+package digidoggy.scrapdun;
 
 import java.util.InputMismatchException;
 import java.util.Random;

@@ -1,7 +1,6 @@
-package game;
+package digidoggy.scrapdun;
 
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
