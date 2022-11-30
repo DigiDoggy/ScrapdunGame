@@ -1,5 +1,7 @@
 package digidoggy.scrapdun;
 
+import digidoggy.scrapdun.model.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 

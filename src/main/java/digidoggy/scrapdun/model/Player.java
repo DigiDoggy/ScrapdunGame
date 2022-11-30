@@ -1,4 +1,8 @@
-package digidoggy.scrapdun;
+package digidoggy.scrapdun.model;
+
+import digidoggy.scrapdun.Armor;
+import digidoggy.scrapdun.Main;
+import digidoggy.scrapdun.model.Characters;
 
 import java.util.ArrayList;
 import java.util.Random;

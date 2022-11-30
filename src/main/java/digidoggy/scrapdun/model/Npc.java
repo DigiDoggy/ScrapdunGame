@@ -1,4 +1,6 @@
-package digidoggy.scrapdun;
+package digidoggy.scrapdun.model;
+
+import digidoggy.scrapdun.model.Characters;
 
 import java.util.Scanner;
 

@@ -1,6 +1,9 @@
 package digidoggy.scrapdun;
 
 
+import digidoggy.scrapdun.model.Npc;
+import digidoggy.scrapdun.model.Player;
+
 import java.util.Scanner;
 
 /*
