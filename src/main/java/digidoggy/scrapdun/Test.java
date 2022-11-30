@@ -1,6 +1,5 @@
-package game;
+package digidoggy.scrapdun;
 
-import javax.xml.namespace.QName;
 import java.util.Random;
 import java.util.Scanner;
 

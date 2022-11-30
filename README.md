@@ -17,3 +17,13 @@
 (Механика боя отличная идея, только надо учесть, что у нас не линейный бой будет. Т е мы сами будем выбирать блок и удар, думаю можем потом вместе заняться этим) . можешь тоже самое сделать, что и я только для оружия. Если хочешь придумать сеты.
 В общем смотри сам чем тебе больше нравится заниматься.
 Первостепенно Оружие и армор.
+
+## Few things to explore
+
+- [SDKMAN!](https://sdkman.io) allows you to switch easily between JDK versions
+- 
+
+https://keepachangelog.com
+https://www.jrebel.com/blog/maven-cheat-sheet
+https://sdkman.io/
+
