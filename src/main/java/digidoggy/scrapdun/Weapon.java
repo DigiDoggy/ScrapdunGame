@@ -1,13 +1,8 @@
 package digidoggy.scrapdun;
 
 
-import digidoggy.scrapdun.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static game.Characters.characterWeapon;
-import static game.Player.player;
 
 
 public class Weapon extends Equipment {
@@ -40,6 +35,7 @@ public class Weapon extends Equipment {
         int choice = Main.validatesInputNumber();
         Main.choiceFromTo(choice, 1, 5);
 
+        /* todo: cleanup
         switch (choice) {
             case 1:
                 player.characterWeapon = axe.nameOfWeapon;
@@ -79,6 +75,7 @@ public class Weapon extends Equipment {
             default:
                 break;
         }
+         */
     }
 
     public static List<Equipment> createWeaponsList() {
@@ -95,7 +92,7 @@ public class Weapon extends Equipment {
 
 
     public static void weaponDamage() {
-
+        /* todo: cleanup
         for (Equipment weapon : createWeaponsList()) {
             if (weapon.nameOfWeapon.equalsIgnoreCase(player.characterWeapon)) {
                 player.damage += weapon.dmg;
@@ -103,7 +100,6 @@ public class Weapon extends Equipment {
 
             }
         }
-
-
+         */
     }
 }

@@ -2,7 +2,6 @@ package digidoggy.scrapdun.model;
 
 import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
-import digidoggy.scrapdun.model.Characters;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,7 +17,7 @@ import java.util.Scanner;
  5.
 
  */
-public class Player extends Characters {
+public class Player extends Character {
 
     public Player(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
         super(health, damage, crtDamage, defence);
@@ -71,9 +70,10 @@ public class Player extends Characters {
                 break;
             case 2:
                 System.out.println("You enter the tent and immediately pay attention to the chest.");
+                /* todo: cleanup
                 System.out.println("You opened the chest and found:" + "\n" +
                         Armor.armorShadowBoots.nameOfArmor );
-
+                 */
                 break;
             case 3:
                 //some method
