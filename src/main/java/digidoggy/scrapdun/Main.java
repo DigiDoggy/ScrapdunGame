@@ -19,9 +19,11 @@ public class Main {
     public static void main(String[] args) {
 
 
+        /* todo: cleanup
         Player.action1();
         System.out.println(Player.player);
         System.out.println(Player.playerArmor.toString());
+         */
 //        Weapon.choseWeapon();
 
 //        greetings();
@@ -47,11 +49,13 @@ public class Main {
     public static void NpcOption() {
         int choice;
 
+        /* todo: cleanup
         System.out.println("""
                 1.To talk to a warrior\s
                 2.Get into a fight\s
                 3.Leave the warrior\s
                 Make your choice:""");
+         */
 
         //git test
 // checking the entered number for (type and validity of numbers)

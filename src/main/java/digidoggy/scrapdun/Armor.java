@@ -1,7 +1,5 @@
 package digidoggy.scrapdun;
 
-import digidoggy.scrapdun.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,15 +39,18 @@ public class Armor extends Equipment {
 
         System.out.println("What kit do you want to build?");
 
+        /* todo: cleanup
         System.out.println("""
                 1.Shadow - Light\s
                 2.Lonely - Heavy
                 3.Major - Cotton (Mage set)
                 4.go back""");
+         */
 
         int select = Main.validatesInputNumber();
         Main.choiceFromTo(select, 1, 4);
 
+        /* todo: cleanup
         switch (select) {
             case 1:
                 playerArmor.add(Armor.armorShadowBoots.nameOfArmor);
@@ -112,6 +113,7 @@ public class Armor extends Equipment {
                 break;
 
         }
+         */
     }
 
     //Methods create armorTypeArrayList
@@ -143,6 +145,7 @@ public class Armor extends Equipment {
         return major;
     }
 
+    /* todo: cleanup
     // Calculate defence for player
     public static void defenceArmor() {
         boolean tag = false;
@@ -169,8 +172,7 @@ public class Armor extends Equipment {
             }
         }
     }
-
-
+     */
 }
 
 
