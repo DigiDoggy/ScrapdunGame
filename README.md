@@ -18,12 +18,12 @@
   While the NPC will already have weapons and armor. (Including all stats from equipment).
 3. The character can only win under one condition, if he finds the note.
    And during the battle, write the contents of the note when given the opportunity.
+
+## How to work with the project
+
+To build the project simply type `mvn clean package` in your terminal. Prepare your update in a branch and do not propagate your updates to `main` branch if you cannot successfully build the project.
+
 ## Few things to explore
 
-- [SDKMAN!](https://sdkman.io) allows you to switch easily between JDK versions
-- 
-
-https://keepachangelog.com
-https://www.jrebel.com/blog/maven-cheat-sheet
-https://sdkman.io/
-
+- https://www.jrebel.com/blog/maven-cheat-sheet
+- https://keepachangelog.com
