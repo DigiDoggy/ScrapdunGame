@@ -1,23 +1,23 @@
-1)Почти весь день разбирался с гитом, чуть все не запорол =-)
-Теперь все норм.
-2)Поправил твой код немного * класс армор
-Закоментил геттеры и сеттеры, решил что не стоит их них грамоздить
-Сделал конструктор для брони
-Сделал метод toString  для того, что бы брать сразу конструктор и можно было отображать
-в консоли все данные конструктора.
-3)Сделал два сета в классе Player
-один из них добавил в ArrayList, где первый Элемент массива будет название сета.
-(В дальнейшем добавлю все остальные в каждый в свой массив, где название сета будет первым элементом.
-Почему первым элементом название? - для отображений сетов на поле битвы (Отбдумаем это может, по частям сета просто раскидаем га поляне боля, а не полными сетами))
+## Task of project:
 
-больше ничего не успел.
-
-Желательно добавить в оружие критический урон(шанс в процентах (пример: 10) )
-
-(Механика боя отличная идея, только надо учесть, что у нас не линейный бой будет. Т е мы сами будем выбирать блок и удар, думаю можем потом вместе заняться этим) . можешь тоже самое сделать, что и я только для оружия. Если хочешь придумать сеты.
-В общем смотри сам чем тебе больше нравится заниматься.
-Первостепенно Оружие и армор.
-
+1. Make a game where, everything the user does will affect him in the future.
+   ## User:
+* Equipment :
+  Detection (dressing) armor / weapons - gives Characteristics (Armor - defense and when user have all set, then some charesteriscs (exp healt, damage).
+* A note:
+  Finding a special note that will affect the outcome of the game. Will be involved in combat.
+* Berry: If the character chooses to eat a berry,
+  gives the effect of poisoning, which will manifest itself before the battle.
+  ## Npc:
+* Armor/Weapon:
+  With the help of a random class, he receives 1 of two sets of armor (heavy, light), receiving defense from armor, the characteristics of the set.\
+  A weapon with the help of a class randomly receives 4 types of weapons (Except for the staff), receiving its characteristics (damage, critical damage probability (CrtDamage)).
+  The user can start fighting at any time (immediately choose to approach the fighter)
+2. If he goes straight into battle, he won't have any stats except for the initial ones.
+  Example:(Health 100, damage 5). \
+  While the NPC will already have weapons and armor. (Including all stats from equipment).
+3. The character can only win under one condition, if he finds the note.
+   And during the battle, write the contents of the note when given the opportunity.
 ## Few things to explore
 
 - [SDKMAN!](https://sdkman.io) allows you to switch easily between JDK versions
