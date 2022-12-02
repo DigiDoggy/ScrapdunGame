@@ -19,7 +19,8 @@ import java.util.Scanner;
  */
 public class Player{
 
-    public static int tag1 = 0;
+    public static List<Integer> tag = new ArrayList<>();
+
     protected static String characterName ;
     protected static int health = 100;
     protected static String characterWeapon ;
@@ -52,7 +53,6 @@ public class Player{
 
 
 
-
 //    characterName
 
 
@@ -72,24 +72,26 @@ public class Player{
     public static void action1(){
 
 
+        tag.add(0);
 
         for (int i= 1; i <=4;i++){
 
-            if(tag1 == 0){
+            if(tag.get(0)==0){
                 System.out.println(i + ".Examine the corpses." );
                 System.out.println((i+1) + ".Go check out the tent.");
-                System.out.println((i+2) + ".Eat a berry");
-                System.out.println((i+3) + ".It's time to finish the game!");
-                break;
-            }else if (tag1 ==1){
-                System.out.println(i + ".Go check out the tent.");
-                System.out.println((i+1) + ".Eat a berry");
                 System.out.println((i+2) + ".It's time to finish the game!");
                 break;
-            }else {
-                System.out.println(i + ".Eat a berry");
+            }else if (tag.get(0)==0 && tag.get(1)==1){
+                System.out.println(i + ".Go check out the tent.");
                 System.out.println((i+1) + ".It's time to finish the game!");
                 break;
+            } else if (tag.get(0)==0 && tag.get(1)==1 && tag.get(2)==2) {
+                System.out.println((i+1) + ".It's time to finish the game!");
+            } else if (tag.get(1)==2) {
+                System.out.println(i + ".Examine the corpses." );
+                System.out.println((i+1) + ".It's time to finish the game!");
+            } else {
+                System.out.println(i + ".It's time to finish the game!");
             }
 
         }
@@ -103,19 +105,19 @@ public class Player{
 
         switch (choice){
             case 1:
-                tag1+=1;
+                tag.add(1);
                 Armor.chooseArmor();
+                action1();
                 break;
             case 2:
-                tag1+=1;
+                tag.add(2);
                 System.out.println("You enter the tent and immediately pay attention to the chest.");
-
+                action1();
                 break;
             case 3:
-                tag1+=1;
-                //some method
+            tag.add(3);
+            break;
 
-                break;
             default:
                 // leave method
 
