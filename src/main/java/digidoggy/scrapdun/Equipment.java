@@ -1,7 +1,5 @@
 package digidoggy.scrapdun;
 
-import java.util.ArrayList;
-import java.util.Objects;
 
 abstract class Equipment {
 

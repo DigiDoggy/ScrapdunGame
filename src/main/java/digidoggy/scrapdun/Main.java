@@ -1,9 +1,9 @@
 package digidoggy.scrapdun;
 
 
-import digidoggy.scrapdun.model.Npc;
 import digidoggy.scrapdun.model.Player;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -18,51 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println(Armor.defenceLonely());
-
-//        Weapon.choseWeapon();
-
-//        greetings();
-//        Player.createName();
         Player.action1();
-//        NpcOption();
 
-
-//        Player.createName();
-//        NpcOption();
-//        Player.equipment();
-
-//        Weapon.weapons();
-//        KostjaTestClass.isGame();
 
     }
 
-    //Actions with NPCs with input validation
-    public static void NpcOption() {
-        int choice;
-// checking the entered number for (type and validity of numbers)
-
-        do {
-            choice = validatesInputNumber();
-
-            choiceFromTo(choice,1,3);
 
 
-        } while ((choice < 1) || (choice > 3));
-
-        switch (choice) {
-            case 1:
-                Npc.npcStory();
-                //method for Talk
-                break;
-            case 2:
-                Npc.fight();
-                break;
-            case 3:
-                break;
-        }
-
-    }
 
     // Game greetings with delay
     public static void greetings() {
@@ -124,6 +86,12 @@ public class Main {
         } while (numb == 1);
 
         return number;
+    }
+
+        //Random Method
+    public static int Random(int number) {
+        Random random = new Random();
+        return random.nextInt(number);
     }
 
 }
