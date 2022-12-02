@@ -53,18 +53,6 @@ abstract class Equipment {
                     '}';
         }
 
-
-//        }
-//        return "Equipment{" +
-//                "nameOfArmor='" + nameOfArmor + '\'' +
-//                ", def=" + def +
-//                ", type='" + type + '\'' +
-//                ", position='" + position + '\'' +
-//                ", nameOfWeapon='" + nameOfWeapon + '\'' +
-//                ", typeOfWeapon='" + typeOfWeapon + '\'' +
-//                ", dmg=" + dmg +
-//                ", crtCh=" + crtCh +
-//                '}';
     }
 
 }

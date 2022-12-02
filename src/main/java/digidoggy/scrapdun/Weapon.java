@@ -1,6 +1,8 @@
 package digidoggy.scrapdun;
 
 
+import digidoggy.scrapdun.model.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,8 @@ public class Weapon extends Equipment {
     protected static Weapon dagger = new Weapon("Knife of Blood", "Dagger", 24, 46);
 
     public static void choseWeapon() {
+        System.out.println("While collecting the set, you saw the weapon that you would like to receive.");
+
         System.out.println("1. " + axe.nameOfWeapon);
         System.out.println("2. " + bow.nameOfWeapon);
         System.out.println("3. " + dagger.nameOfWeapon);
@@ -32,53 +36,60 @@ public class Weapon extends Equipment {
         System.out.println("5. " + staffOfSoul.nameOfWeapon);
 
         System.out.println("Which weapon you need ?");
-        int choice = Main.validatesInputNumber();
-        Main.choiceFromTo(choice, 1, 5);
+        int select = Main.validatesInputNumber();
+        Main.choiceFromTo(select, 1, 5);
 
-        /* todo: cleanup
-        switch (choice) {
+        switch (select) {
             case 1:
-                player.characterWeapon = axe.nameOfWeapon;
-                System.out.println("Great, you chose the mace: " + player.characterWeapon);
-                weaponDamage();
-                Main.loading(300);
+                //Player damage
+                Player.calculateWeaponDamage(damageFromWeapon(select));
+                System.out.println("You have " + axe.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Main.loading(500);
+                System.out.println();
+
                 Player.action1();
                 break;
             case 2:
-                player.characterWeapon = bow.nameOfWeapon;
-                System.out.println("Great, you chose the bow: " + player.characterWeapon);
-                weaponDamage();
-                Main.loading(300);
+                Player.calculateWeaponDamage(damageFromWeapon(select));
+                System.out.println("You have " + bow.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Main.loading(500);
+                System.out.println();
+
                 Player.action1();
                 break;
             case 3:
-                characterWeapon = dagger.nameOfWeapon;
-                System.out.println("Great, you chose the dagger: " + characterWeapon);
-                weaponDamage();
-                Main.loading(300);
+                Player.calculateWeaponDamage(damageFromWeapon(select));
+                System.out.println("You have " + dagger.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Main.loading(500);
+                System.out.println();
+
                 Player.action1();
                 break;
             case 4:
-                characterWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the sword: " + characterWeapon);
-                weaponDamage();
-                Main.loading(300);
+                Player.calculateWeaponDamage(damageFromWeapon(select));
+                System.out.println("You have " + sword.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+
+                Main.loading(500);
+                System.out.println();
+
                 Player.action1();
                 break;
             case 5:
-                characterWeapon = sword.nameOfWeapon;
-                System.out.println("Great, you chose the staff: " + characterWeapon);
-                weaponDamage();
-                Main.loading(300);
+                Player.calculateWeaponDamage(damageFromWeapon(select));
+                System.out.println("You have " + staffOfSoul.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Main.loading(500);
+                System.out.println();
+
                 Player.action1();
+
                 break;
-            default:
-                break;
+
         }
-         */
+
+
     }
 
-    public static List<Equipment> createWeaponsList() {
+    public static int damageFromWeapon(int select) {
         List<Equipment> weaponList = new ArrayList<>();
         weaponList.add(axe);
         weaponList.add(bow);
@@ -86,20 +97,10 @@ public class Weapon extends Equipment {
         weaponList.add(sword);
         weaponList.add(staffOfSoul);
 
-        return weaponList;
+        int valueOfDamage = weaponList.get(select - 1).dmg;
 
+        return valueOfDamage;
     }
 
 
-    public static void weaponDamage() {
-        /* todo: cleanup
-        for (Equipment weapon : createWeaponsList()) {
-            if (weapon.nameOfWeapon.equalsIgnoreCase(player.characterWeapon)) {
-                player.damage += weapon.dmg;
-                player.crtDamage += weapon.crtCh;
-
-            }
-        }
-         */
-    }
 }

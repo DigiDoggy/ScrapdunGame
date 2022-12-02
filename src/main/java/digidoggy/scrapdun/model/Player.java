@@ -4,7 +4,7 @@ import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -17,22 +17,40 @@ import java.util.Scanner;
  5.
 
  */
-public class Player extends Character {
+public class Player{
 
-    public Player(String characterName, int health, String characterWeapon, int damage, int crtDamage, String block, int defence) {
-        super(health, damage, crtDamage, defence);
+    public static int tag1 = 0;
+    protected static String characterName ;
+    protected static int health = 100;
+    protected static String characterWeapon ;
+    protected static String armorsHead ;
+    protected static String armorBody ;
+    protected static String armorLegs ;
+    protected static String armorArms ;
+    public static int damage = 10;
+//    protected static int crtDamage = 5;
+//    protected static String block;
+    public static int defence = 10;
+
+
+    public Player(String characterName, int health, int damage, int defence){
+        Player.characterName =characterName;
+        Player.health =health;
+        Player.damage = damage;
+        Player.defence = defence;
+
+        System.out.println("characterName: " + characterName + "\n" +
+                "health: " + health + "\n" +
+                "damage: " + damage + "\n" +
+                "defence: " + defence);
     }
-    public Player(String armorsHead, String armorBody, String armorLegs, String armorArms) {
-        super(armorsHead, armorBody, armorLegs, armorArms);
-    }
-
-
+    Player player = new Player(characterName, health, damage, defence);
     public static Scanner scanner = new Scanner(System.in);
 
-    public static ArrayList<String> playerArmor = new ArrayList<>();
+    public static List<Armor> playerArmor = new ArrayList<>();
 
 
-     protected static Player player = new Player(characterName, health,characterWeapon ,damage ,crtDamage,block,defence );
+
 
 
 //    characterName
@@ -53,10 +71,29 @@ public class Player extends Character {
     //method for user who find some item
     public static void action1(){
 
-        System.out.println("1.Examine the corpses.");
-        System.out.println("2.Go check out the tent.");
-        System.out.println("3.Eat a berry");
-        System.out.println("4.It's time to finish the game!");
+
+
+        for (int i= 1; i <=4;i++){
+
+            if(tag1 == 0){
+                System.out.println(i + ".Examine the corpses." );
+                System.out.println((i+1) + ".Go check out the tent.");
+                System.out.println((i+2) + ".Eat a berry");
+                System.out.println((i+3) + ".It's time to finish the game!");
+                break;
+            }else if (tag1 ==1){
+                System.out.println(i + ".Go check out the tent.");
+                System.out.println((i+1) + ".Eat a berry");
+                System.out.println((i+2) + ".It's time to finish the game!");
+                break;
+            }else {
+                System.out.println(i + ".Eat a berry");
+                System.out.println((i+1) + ".It's time to finish the game!");
+                break;
+            }
+
+        }
+
 
         int choice  = Main.validatesInputNumber();
 
@@ -66,16 +103,16 @@ public class Player extends Character {
 
         switch (choice){
             case 1:
-                Armor.choceArmor();
+                tag1+=1;
+                Armor.chooseArmor();
                 break;
             case 2:
+                tag1+=1;
                 System.out.println("You enter the tent and immediately pay attention to the chest.");
-                /* todo: cleanup
-                System.out.println("You opened the chest and found:" + "\n" +
-                        Armor.armorShadowBoots.nameOfArmor );
-                 */
+
                 break;
             case 3:
+                tag1+=1;
                 //some method
 
                 break;
@@ -84,26 +121,24 @@ public class Player extends Character {
 
                 break;
         }
-
-
     }
 
+    //calculate defence
+    public static void calculateDefenceForPlayer(int defOfArmor){
+        Player.defence+=defOfArmor;
+    }
 
-    //подсчет защиты игрока.
-//    public static int playerDefence(){
+    //calculate damage
+
+    public static void calculateWeaponDamage (int weaponDamage){
+        Player.damage +=weaponDamage;
+    }
 //
-//        return playerDef;
+//    //Random Method
+//    public static int Random(int number) {
+//        Random random = new Random();
+//        return random.nextInt(number);
 //    }
-
-
-
-
-
-    //Random Method
-    public static int Random(int number) {
-        Random random = new Random();
-        return random.nextInt(number);
-    }
-
+//
 
 }

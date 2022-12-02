@@ -1,5 +1,8 @@
 package digidoggy.scrapdun;
 
+import digidoggy.scrapdun.model.Player;
+
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +11,6 @@ public class Armor extends Equipment {
     public Armor(String nameOfArmor, int def, String type, String position) {
         super(nameOfArmor, def, type, position);
     }
-
-    //Параметр "Урон броне противника" есть на штурмовых винтовках - он варьируется на PTS 1.5 от 17.5% до 24%, а также на снаряжении. С учетом этого, общий параметр "Урон броне противника" можно поднять в среднем до 40%. Тогда итоговое смягчение урона броней будет: Броня%_итог3 = 60% / 100 * (100 - (40% * 0.3) = 52,8%.
     //Armor creating for usage
 //Heavy
     protected static Armor armorLonelyChest = new Armor("Lonely Scaled ChestGuard", 150, "Heavy", "Chest");
@@ -27,154 +28,137 @@ public class Armor extends Equipment {
     protected static Armor armorMajorGloves = new Armor("Major Arcana Gloves", 15, "Cotton", "Gloves");
     protected static Armor armorMajorBoots = new Armor("Major Arcana Boots", 15, "Cotton", "Boots");
 
-
-    public static void choceArmor() {
+//choose your armor
+    public static void chooseArmor() {
         System.out.println("You examined the corpse and found:" + "\n" +
                 armorLonelyChest.nameOfArmor + "\n" +
-                armorMajorGloves.nameOfArmor + "\n" +
-                armorShadowBoots.nameOfArmor);
+                armorShadowGloves.nameOfArmor + "\n" +
+                armorMajorBoots.nameOfArmor);
 
         System.out.println("If you collect a set of armor," + "\n" +
-                " you can get additional characteristics.");
+                "it increase your defence.");
+
 
         System.out.println("What kit do you want to build?");
+        System.out.println("1. Heavy armor." + "\n" +
+                "2. Light armor." + "\n" +
+                "3. Robe armor." + "\n" );
 
-        /* todo: cleanup
-        System.out.println("""
-                1.Shadow - Light\s
-                2.Lonely - Heavy
-                3.Major - Cotton (Mage set)
-                4.go back""");
-         */
 
         int select = Main.validatesInputNumber();
-        Main.choiceFromTo(select, 1, 4);
+        Main.choiceFromTo(select, 1, 3);
 
-        /* todo: cleanup
-        switch (select) {
+        switch (select){
             case 1:
-                playerArmor.add(Armor.armorShadowBoots.nameOfArmor);
-                playerArmor.add(Armor.armorShadowChest.nameOfArmor);
-                playerArmor.add(Armor.armorShadowGloves.nameOfArmor);
-                playerArmor.add(Armor.armorShadowHelmet.nameOfArmor);
-                //Calculate defence for player
-                Armor.defenceArmor();
-                System.out.println("""
-                        You decided to collect light armor,\s
-                        and for this marched across the battlefield and found the remaining
-                        set parts.""");
-                Main.loading(300);
-                System.out.println("Great you have a complete set," + "\n" +
-                        "but you found another different kind of weapon");
-                // Chose weapon
+                System.out.println("You have Heavy armor");
+                Player.playerArmor.add(armorLonelyChest);
+                Player.playerArmor.add(armorLonelyBoots);
+                Player.playerArmor.add(armorLonelyGloves);
+                Player.playerArmor.add(armorLonelyHelmet);
+
+                Player.calculateDefenceForPlayer(defenceLonely());
+
+                System.out.println("Now you have " + Player.defence);
+
+                Main.loading(500);
+
                 Weapon.choseWeapon();
 
                 break;
             case 2:
-                playerArmor.add(Armor.armorLonelyChest.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyHelmet.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyGloves.nameOfArmor);
-                playerArmor.add(Armor.armorLonelyBoots.nameOfArmor);
-                //Calculate defence for player
-                Armor.defenceArmor();
-                System.out.println("""
-                        You decided to collect Heavy armor,\s
-                        and for this marched across the battlefield and found the remaining
-                        set parts.""");
-                Main.loading(300);
-                System.out.println("Great you have a complete set," + "\n" +
-                        "but you found another different kind of weapon");
-                //chose weapon
+                System.out.println("You have light armor");
+                Player.playerArmor.add(armorShadowChest);
+                Player.playerArmor.add(armorShadowHelmet);
+                Player.playerArmor.add(armorShadowGloves);
+                Player.playerArmor.add(armorShadowBoots);
+
+                Player.calculateDefenceForPlayer(defenceShadow());
+
+                System.out.println("Now you have " + Player.defence);
+                System.out.println();
+
+                Main.loading(500);
+
                 Weapon.choseWeapon();
+
                 break;
+
             case 3:
-                playerArmor.add(Armor.armorMajorGloves.nameOfArmor);
-                playerArmor.add(Armor.armorMajorChest.nameOfArmor);
-                playerArmor.add(Armor.armorMajorBoots.nameOfArmor);
-                playerArmor.add(Armor.armorMajorHelm.nameOfArmor);
-                //Calculate defence for player
-                Armor.defenceArmor();
-                System.out.println("""
-                        You decided to collect Mage set,\s
-                        and for this marched across the battlefield and found the remaining
-                        set parts.""");
-                Main.loading(300);
-                System.out.println("""
-                        Great you have a complete set,
-                        Well now you consider yourself a magician.
-                        And for this marched across the battlefield and found the remaining
-                        but you found another different kind of weapon.""");
-                //chose weapon
+                System.out.println("You have light armor");
+
+                Player.playerArmor.add(armorMajorChest);
+                Player.playerArmor.add(armorMajorHelm);
+                Player.playerArmor.add(armorMajorGloves);
+                Player.playerArmor.add(armorMajorBoots);
+
+                Player.calculateDefenceForPlayer(defenceMajor());
+
+                System.out.println("Now you have " + Player.defence);
+                System.out.println();
+
+                Main.loading(500);
+
                 Weapon.choseWeapon();
+
+
                 break;
-            case 4:
-                System.out.println("Need to think.");
-                Player.action1();
-                break;
+
+
 
         }
-         */
     }
 
+
     //Methods create armorTypeArrayList
-    public static List<Equipment> defenceLonely() {
+    public static int defenceLonely() {
         List<Equipment> lonely = new ArrayList<>();
         lonely.add(armorLonelyChest);
         lonely.add(armorLonelyHelmet);
         lonely.add(armorLonelyBoots);
         lonely.add(armorLonelyGloves);
+        int valueOjDefence=0;
+        for (Equipment armor: lonely) {
+            valueOjDefence+=armor.def;
+        }
+        return valueOjDefence;
 
-        return lonely;
     }
 
-    public static List<Equipment> defenceShadow() {
+    public int calculate(List<Equipment> equipment){
+        int valueOjDefence=0;
+        for (Equipment armor: equipment) {
+            valueOjDefence+=armor.def;
+        }
+        return valueOjDefence;
+    }
+
+    public static int defenceShadow() {
         List<Equipment> shadow = new ArrayList<>();
         shadow.add(armorShadowChest);
         shadow.add(armorShadowHelmet);
         shadow.add(armorShadowBoots);
         shadow.add(armorShadowGloves);
-        return shadow;
+
+        int valueOjDefence=0;
+        for (Equipment armor: shadow) {
+            valueOjDefence+=armor.def;
+        }
+        return valueOjDefence;
     }
 
-    public static List<Equipment> defenceMajor() {
+    public static int defenceMajor() {
         List<Equipment> major = new ArrayList<>();
         major.add(armorMajorChest);
         major.add(armorMajorHelm);
         major.add(armorMajorBoots);
         major.add(armorMajorGloves);
-        return major;
-    }
 
-    /* todo: cleanup
-    // Calculate defence for player
-    public static void defenceArmor() {
-        boolean tag = false;
-        for (String playerArmorName : playerArmor) {
-
-            if (!tag) {
-                if (playerArmorName.equalsIgnoreCase(defenceLonely().get(0).nameOfArmor)) {
-                    for (Equipment armor : defenceLonely()) {
-                        player.defence += armor.def;
-                        tag = true;
-                    }
-                } else if (playerArmorName.equalsIgnoreCase(defenceShadow().get(0).nameOfArmor)) {
-                    for (Equipment armor : defenceShadow()) {
-                        player.defence += armor.def;
-                        tag = true;
-                    }
-                } else {
-                    for (Equipment armor : defenceMajor()) {
-                        player.defence += armor.def;
-                        tag = true;
-                    }
-                }
-
-            }
+        int valueOjDefence=0;
+        for (Equipment armor: major) {
+            valueOjDefence+=armor.def;
         }
+        return valueOjDefence;
     }
-     */
+
+
 }
-
-
-
-

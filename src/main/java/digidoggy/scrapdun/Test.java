@@ -10,14 +10,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        /* todo: cleanup
-        Armor.defenceArmor();
-         */
-//        Weapon.weaponDamage();
-//       check();
     }
-
-
     public static int check() {
         int numb;
         int number = 0;

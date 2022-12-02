@@ -18,17 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        System.out.println(Armor.defenceLonely());
 
-        /* todo: cleanup
-        Player.action1();
-        System.out.println(Player.player);
-        System.out.println(Player.playerArmor.toString());
-         */
 //        Weapon.choseWeapon();
 
 //        greetings();
 //        Player.createName();
-//        Player.action1();
+        Player.action1();
 //        NpcOption();
 
 
@@ -39,25 +35,11 @@ public class Main {
 //        Weapon.weapons();
 //        KostjaTestClass.isGame();
 
-
-
     }
-
-
 
     //Actions with NPCs with input validation
     public static void NpcOption() {
         int choice;
-
-        /* todo: cleanup
-        System.out.println("""
-                1.To talk to a warrior\s
-                2.Get into a fight\s
-                3.Leave the warrior\s
-                Make your choice:""");
-         */
-
-        //git test
 // checking the entered number for (type and validity of numbers)
 
         do {
