@@ -20,16 +20,40 @@ import java.util.Scanner;
 public class Player {
 
 
-    protected static String characterName;
+    protected static String characterName="Player";
     protected static int health = 100;
-    protected static String characterWeapon;
-    public static int damage = 10;
-    public static int defence = 10;
+//    protected static String characterWeapon;
+    public static int damage = 8;
+    public static int defence = 1;
+
+    //Setter
+
+    public static void setHealth(int health) {
+        Player.health = health;
+    }
+
+    //Getters
+    public static String getCharacterName() {
+        return characterName;
+    }
+
+    public static int getHealth() {
+        return health;
+    }
 
 
-    public Player(String characterName,String characterWeapon, int health, int damage, int defence) {
+    public static int getDamage() {
+        return damage;
+    }
+
+
+    public static int getDefence() {
+        return defence;
+    }
+
+
+    public Player(String characterName, int health, int damage, int defence) {
         Player.characterName = characterName;
-        Player.characterWeapon = characterWeapon;
         Player.health = health;
         Player.damage = damage;
         Player.defence = defence;
@@ -40,7 +64,7 @@ public class Player {
                 "defence: " + defence);
     }
 
-    Player player = new Player(characterName, characterWeapon, health, damage, defence);
+    Player player = new Player(characterName,  health, damage, defence);
     public static Scanner scanner = new Scanner(System.in);
 
     public static List<Armor> playerArmor = new ArrayList<>();

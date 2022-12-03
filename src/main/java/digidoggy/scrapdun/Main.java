@@ -1,8 +1,12 @@
 package digidoggy.scrapdun;
 
 
+import digidoggy.scrapdun.combat.CombatMechanics;
+import digidoggy.scrapdun.combat.Fight;
 import digidoggy.scrapdun.model.Player;
 
+import java.security.PublicKey;
+import java.util.Collection;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,12 +18,21 @@ TODO:
  */
 public class Main {
 
+    private static String winnerName = " ";
+
+    public static void setWinnerName(String winnerName) {
+        Main.winnerName = winnerName;
+    }
+
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        Player.action1();
+//        Player.action1();
 
+
+        Fight.fightMethod();
+        System.out.println(winnerName);
 
     }
 

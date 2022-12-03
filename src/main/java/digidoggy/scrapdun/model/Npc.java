@@ -13,10 +13,35 @@ todo
  */
 public class Npc{
 
-    protected static String npcCharacterName ;
+    protected static String npcCharacterName = "Npc";
     protected static int npcHealth = 100;
-    public static int npcDamage = 10;
-    protected static int npcDefence = 10;
+    public static int npcDamage = 8;
+    protected static int npcDefence = 1;
+
+
+
+    //Setters
+    public static void setNpcHealth(int npcHealth) {
+        Npc.npcHealth = npcHealth;
+    }
+
+//Getters
+
+    public static String getNpcCharacterName() {
+        return npcCharacterName;
+    }
+
+    public static int getNpcHealth() {
+        return npcHealth;
+    }
+
+    public static int getNpcDamage() {
+        return npcDamage;
+    }
+
+    public static int getNpcDefence() {
+        return npcDefence;
+    }
 
     public Npc(String npcCharacterName, int health, int damage, int defence){
         Npc.npcCharacterName =npcCharacterName;
