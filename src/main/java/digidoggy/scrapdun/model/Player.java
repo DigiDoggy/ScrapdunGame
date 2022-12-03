@@ -34,7 +34,10 @@ public class Player {
         Player.damage = damage;
         Player.defence = defence;
 
-        System.out.println("characterName: " + characterName + "\n" + "health: " + health + "\n" + "damage: " + damage + "\n" + "defence: " + defence);
+        System.out.println("characterName: " + characterName + "\n" +
+                "health: " + health + "\n" +
+                "damage: " + damage + "\n" +
+                "defence: " + defence);
     }
 
     Player player = new Player(characterName, characterWeapon, health, damage, defence);
