@@ -1,6 +1,5 @@
 package digidoggy.scrapdun;
 
-import java.util.Random;
 import java.util.Scanner;
 
 

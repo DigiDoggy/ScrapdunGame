@@ -14,12 +14,6 @@ public class Weapon extends Equipment {
     }
 
 
-    public static void some() {
-
-
-    }
-
-
     protected static Weapon axe = new Weapon("Axe of Infinity", "Axe", 30, 14);
     protected static Weapon sword = new Weapon("Sword of Destiny", "Sword", 45, 18);
     protected static Weapon staffOfSoul = new Weapon("Staff of Soul", "Staff", 25, 8);

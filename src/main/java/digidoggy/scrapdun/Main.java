@@ -1,20 +1,11 @@
 package digidoggy.scrapdun;
 
-
-import digidoggy.scrapdun.combat.CombatMechanics;
-import digidoggy.scrapdun.combat.Fight;
-import digidoggy.scrapdun.model.Npc;
 import digidoggy.scrapdun.model.Player;
 
 import java.util.Random;
 import java.util.Scanner;
 
-/*
-TODO:
- 1.First menu
- 2.Fight method ( mb going to other new class)
- 3. Think about the dependencies of classes on each other and perhaps use an abstract class. (for heroes and items)
- */
+
 public class Main {
 
     private static String winnerName = " ";
@@ -27,16 +18,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-//        greetings();
-//        Player.createName();
+        greetings();
+        Player.createName();
         Player.action1();
-
-//        Npc.npcChooseWeapon();
-//        Npc.npcChoice();
-
-
-//        System.out.println(winnerName);
 
     }
 

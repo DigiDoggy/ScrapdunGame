@@ -1,19 +1,11 @@
 package digidoggy.scrapdun.model;
 
-
 import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
 import digidoggy.scrapdun.Weapon;
 
 import java.util.ArrayList;
-import java.util.List;
 
-/*
-todo
- 1. Create story
- 2.Create fight system (random hit and random block)
- 3. Choice of ammunition based on random.
- */
 public class Npc{
 
     protected static String npcCharacterName = "Npc";
@@ -22,9 +14,6 @@ public class Npc{
     protected static int npcDefence = 1;
 
     public static ArrayList<String> npcBlockHit = new ArrayList<>();
-
-
-
 
     //Setters
     public static void setNpcHealth(int npcHealth) {
@@ -99,10 +88,6 @@ public class Npc{
         npcChooseArmor();
         npcChooseWeapon();
     }
-    //ArrayList block and hit for NPC
-
-
-
 
 
 }
