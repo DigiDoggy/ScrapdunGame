@@ -96,7 +96,7 @@ public class Weapon extends Equipment {
         weaponList.add(sword);
         weaponList.add(staffOfSoul);
 
-        int valueOfDamage = weaponList.get(select - 1).dmg;
+        int valueOfDamage = weaponList.get(select-1).dmg;
 
         return valueOfDamage;
     }

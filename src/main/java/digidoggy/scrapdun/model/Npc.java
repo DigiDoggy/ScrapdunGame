@@ -87,7 +87,9 @@ public class Npc{
     }
     //Npc choose weapon
     public static void npcChooseWeapon(){
-        int weaponAmount = Main.Random(5);
+
+        int weaponAmount = Main.Random((5-1)+1);
+        weaponAmount+=1;
 
         calculateDamageForNpc(Weapon.damageFromWeapon(weaponAmount));
 

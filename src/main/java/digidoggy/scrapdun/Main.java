@@ -28,10 +28,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-//        System.out.println(CombatMechanics.blockAndHitForNpc());
-//        Player.action1();
+//        greetings();
+//        Player.createName();
+        Player.action1();
+
+//        Npc.npcChooseWeapon();
 //        Npc.npcChoice();
-        Fight.fightMethod();
+
+
 //        System.out.println(winnerName);
 
     }
@@ -41,7 +45,7 @@ public class Main {
 
     // Game greetings with delay
     public static void greetings() {
-        String hello = "Добро пожаловать в игру. Бл*!!!";
+        String hello = "Добро пожаловать в игру.";
         String welcome = "Welcome to the game.";
         String tab = "\t";
 //tab for writing text in the centre
@@ -106,6 +110,7 @@ public class Main {
 
         return number;
     }
+
 
         //Random Method
     public static int Random(int number) {

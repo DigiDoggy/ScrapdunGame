@@ -25,7 +25,7 @@ public class CombatMechanics {
 
             if (name.equals(Player.getCharacterName())) {
                 // Player Attack
-                System.out.println("Where do you go to attack?");
+                System.out.println("Where do you attack?");
                 blockAndHitForPlayer();
                 //NpcBlock
                 blockAndHitForNpc();
@@ -96,7 +96,7 @@ public class CombatMechanics {
     }
 
     public static int hit(int dm, int def) {
-        int hit = Math.round((dm/def));
+        int hit = Math.round((dm/def)+15);
         int max = hit + 5;
         int min = hit - 1;
         hit = Main.Random((max - min) + 1);

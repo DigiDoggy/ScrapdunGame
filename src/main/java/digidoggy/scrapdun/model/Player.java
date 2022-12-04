@@ -2,6 +2,7 @@ package digidoggy.scrapdun.model;
 
 import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
+import digidoggy.scrapdun.combat.Fight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,9 @@ import java.util.Scanner;
 public class Player {
 
 
-    protected static String characterName="Player";
+    protected static String characterName = "Player";
     protected static int health = 100;
-//    protected static String characterWeapon;
+    //    protected static String characterWeapon;
     public static int damage = 10;
     public static int defence = 1;
 
@@ -66,22 +67,20 @@ public class Player {
                 "defence: " + defence);
     }
 
-    Player player = new Player(characterName,  health, damage, defence);
+    Player player = new Player(characterName, health, damage, defence);
     public static Scanner scanner = new Scanner(System.in);
 
     public static List<Armor> playerArmor = new ArrayList<>();
 
 
     // find out the name of the player
-    public static String createName() {
+    public static void createName() {
 
-        System.out.println("Hello new hero of that danger word.");
+        System.out.println("Hello new hero.");
         System.out.println("Enter your name: ");
-        characterName = scanner.nextLine();
-        System.out.println(characterName + "you see many corpses after the battle, " + "\n" + "an empty military tent and a bush of berries growing next to you.");
-        System.out.println("What will you do?");
+        characterName = scanner.nextLine().trim();
 
-        return characterName;
+
     }
 
     //method for user who find some item
@@ -89,16 +88,20 @@ public class Player {
 
         System.out.println("1.Examine the corpses.");
         System.out.println("2.Go check out the tent.");
-        System.out.println("3.Go fight");
-        System.out.println("4.It's time to finish the game!");
+        System.out.println("3.Go fight!");
+        System.out.println("4.Database of the game");
+        System.out.println("5.It's time to finish the game!");
 
 
-        int choice = Main.choiceFromTo( 1, 4);
+        int choice = Main.choiceFromTo(1, 5);
 
 
         switch (choice) {
             case 1:
+                Npc.npcChooseArmor();
+                Npc.npcChooseWeapon();
                 Armor.chooseArmor();
+
                 break;
             case 2:
                 System.out.println("You went inside the tent and saw a note.");
@@ -107,12 +110,13 @@ public class Player {
                 action1();
                 break;
             case 3:
-                System.out.println("Go to fight method");
+                Fight.fightMethod();
                 break;
-
             case 4:
-                // leave method
-
+                System.out.println("Maybe there will be a database");
+                break;
+            case 5:
+                //leave the game
                 break;
         }
     }
