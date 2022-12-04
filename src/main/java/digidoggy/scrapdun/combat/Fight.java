@@ -22,17 +22,19 @@ public class Fight {
 
         boolean fight = true;
 
-        while (fight){
+        while (fight) {
 
-            CombatMechanics.hitDamage(Player.getCharacterName(),Npc.getNpcHealth(),Player.getDamage(),Npc.getNpcDefence());
-            CombatMechanics.hitDamage(Npc.getNpcCharacterName(),Player.getHealth(),Npc.getNpcDamage(),Player.getDefence());
+            fight=CombatMechanics.hitDamage(Player.getCharacterName(), Npc.getNpcHealth(), Player.getDamage(), Npc.getNpcDefence(),fight);
 
-            if ((Player.getHealth()==0 || Npc.getNpcHealth()==0) || (Player.getHealth()<=0 || Npc.getNpcHealth()<=0)){
-                fight =false;
-            }
+            fight=CombatMechanics.hitDamage(Npc.getNpcCharacterName(), Player.getHealth(), Npc.getNpcDamage(), Player.getDefence(),fight);
+
         }
 
     }
 
 
 }
+
+
+
+

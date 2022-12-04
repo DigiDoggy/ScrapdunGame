@@ -15,7 +15,7 @@ public class Npc{
 
     protected static String npcCharacterName = "Npc";
     protected static int npcHealth = 100;
-    public static int npcDamage = 8;
+    public static int npcDamage = 10;
     protected static int npcDefence = 1;
 
 
