@@ -5,6 +5,9 @@ import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
 import digidoggy.scrapdun.Weapon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 todo
  1. Create story
@@ -17,6 +20,9 @@ public class Npc{
     protected static int npcHealth = 100;
     public static int npcDamage = 10;
     protected static int npcDefence = 1;
+
+    public static ArrayList<String> npcBlockHit = new ArrayList<>();
+
 
 
 
@@ -86,6 +92,15 @@ public class Npc{
         calculateDamageForNpc(Weapon.damageFromWeapon(weaponAmount));
 
     }
+
+    public static void npcChoice(){
+        npcChooseArmor();
+        npcChooseWeapon();
+    }
+    //ArrayList block and hit for NPC
+
+
+
 
 
 }

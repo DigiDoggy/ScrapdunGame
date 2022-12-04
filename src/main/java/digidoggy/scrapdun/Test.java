@@ -9,9 +9,9 @@ public class Test {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+testChoiceFromTo(1,4);
     }
-    public static int check() {
+    public static int newTest() {
         int numb;
         int number = 0;
         do {
@@ -26,11 +26,18 @@ public class Test {
 
         return number;
     }
-    public static int Random(int number){
-        Random random = new Random();
-        return random.nextInt(number);
+
+    public static int testChoiceFromTo(int number, int num){
+        int choice;
+        do {
+            choice = newTest();
+            if ((choice < number) || (choice > num)) {
+                System.out.println("There is no such option.");
+
+            }
+        }while ((choice < number) || (choice > num));
+
+        return choice;
     }
-
-
 
 }

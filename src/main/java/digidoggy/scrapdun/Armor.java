@@ -47,8 +47,7 @@ public class Armor extends Equipment {
                 "3. Robe armor." + "\n");
 
 
-        int select = Main.validatesInputNumber();
-        Main.choiceFromTo(select, 1, 3);
+        int select = Main.choiceFromTo( 1, 3);
 
         switch (select) {
             case 1:

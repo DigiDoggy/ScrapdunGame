@@ -36,8 +36,7 @@ public class Weapon extends Equipment {
         System.out.println("5. " + staffOfSoul.nameOfWeapon);
 
         System.out.println("Which weapon you need ?");
-        int select = Main.validatesInputNumber();
-        Main.choiceFromTo(select, 1, 5);
+        int select = Main.choiceFromTo(1, 5);
 
         switch (select) {
             case 1:

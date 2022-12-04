@@ -1,7 +1,10 @@
 package digidoggy.scrapdun;
 
 
+import digidoggy.scrapdun.combat.CombatMechanics;
 import digidoggy.scrapdun.combat.Fight;
+import digidoggy.scrapdun.model.Npc;
+import digidoggy.scrapdun.model.Player;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -24,11 +27,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+//        System.out.println(CombatMechanics.blockAndHitForNpc());
 //        Player.action1();
-
-
+//        Npc.npcChoice();
         Fight.fightMethod();
-        System.out.println(winnerName);
+//        System.out.println(winnerName);
 
     }
 
@@ -72,11 +76,17 @@ public class Main {
         }
     }
 
-    public static void choiceFromTo(int choice, int number, int num){
-
+    public static int choiceFromTo( int number, int num){
+        int choice;
+        do {
+            choice = validatesInputNumber();
             if ((choice < number) || (choice > num)) {
                 System.out.println("There is no such option.");
+
             }
+        }while ((choice < number) || (choice > num));
+
+        return choice;
         }
 
 

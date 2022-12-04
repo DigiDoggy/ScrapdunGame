@@ -26,6 +26,8 @@ public class Player {
     public static int damage = 10;
     public static int defence = 1;
 
+    public static ArrayList<String> playerBlockHit = new ArrayList<>();
+
     //Setter
 
     public static void setHealth(int health) {
@@ -91,8 +93,7 @@ public class Player {
         System.out.println("4.It's time to finish the game!");
 
 
-        int choice = Main.validatesInputNumber();
-        Main.choiceFromTo(choice, 1, 4);
+        int choice = Main.choiceFromTo( 1, 4);
 
 
         switch (choice) {
