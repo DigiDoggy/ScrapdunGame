@@ -82,11 +82,12 @@ public class CombatMechanics {
                 fight = false;
 
 
-                System.out.println(name1 + " Winner!");
+                System.out.println(name1 + " Winner!" + "\n");
 
                 if (name1.equals(Player.getCharacterName())) {
                     Main.setWinnerName(Player.getCharacterName());
                 }
+
 
                 return fight;
             }

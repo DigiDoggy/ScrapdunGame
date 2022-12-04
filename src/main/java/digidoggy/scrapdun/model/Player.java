@@ -111,9 +111,11 @@ public class Player {
                 break;
             case 3:
                 Fight.fightMethod();
+                action1();
                 break;
             case 4:
-                System.out.println("Maybe there will be a database");
+                System.out.println("Maybe there will be a database"+"\n");
+                action1();
                 break;
             case 5:
                 //leave the game

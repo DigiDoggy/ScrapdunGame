@@ -19,6 +19,15 @@
 3. The character can only win under one condition, if he finds the note.
    And during the battle, write the contents of the note when given the opportunity.
 
+
+## Todo 
+* DataBase for the game
+1. Table with player name / lose or win / Weapon
+2. Delete from table name.
+3. Read data
+4. If i`m have some time create new database and use it. 
+  
+
 ## How to work with the project
 
 To build the project simply type `mvn clean package` in your terminal. Prepare your update in a branch and do not propagate your updates to `main` branch if you cannot successfully build the project.

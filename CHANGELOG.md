@@ -1,6 +1,8 @@
 ## 0.1.0
 - Configure Maven project
-- 2022.12.04 Combat package - Fight class and CombatMechanics works correctly. 
+- 2022.12.04 Game completed, need database and some rewrite in code of game(choice 2 in Player.action1() get addicted to him in combatMechanics).
+- Rewrote some methods in Main class (choose option, now all in one method). Completed Player and Npc block and hit. 
+- .Combat package - Fight class and CombatMechanics works correctly. 
 - Fight class need to correct, -Method hitDamage().need to divide into parts (Methods), for easy code correction.
 - 2022.12.03 Created class fight and combatMechanics have some mistakes in Fight.fightMethod() with ending of method .
 - Created methods for NPC class, now npc have defence and damage.All bad code removed (except for Character, KostjaTest, Test classes)
