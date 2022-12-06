@@ -23,7 +23,7 @@ public class Player {
 
     protected static String characterName = "Player";
     protected static int health = 100;
-    protected static String characterWeapon;
+    private static String characterWeapon;
     public static int damage = 10;
     public static int defence = 1;
 
@@ -34,11 +34,24 @@ public class Player {
         Player.characterWeapon = characterWeapon;
     }
 
+    public static void setDamage(int damage) {
+        Player.damage = damage;
+    }
+
+    public static void setDefence(int defence) {
+        Player.defence = defence;
+    }
+
     public static void setHealth(int health) {
         Player.health = health;
     }
 
     //Getters
+
+    public static String getCharacterWeapon() {
+        return characterWeapon;
+    }
+
     public static String getCharacterName() {
         return characterName;
     }
@@ -101,6 +114,11 @@ public class Player {
 
         switch (choice) {
             case 1:
+                //If player already have some weapon or armor
+                if (Player.getDefence()>1 && Player.getDamage()>10){
+                    Player.setDefence(1);
+                    Player.setDamage(10);
+                }
                 Npc.npcChooseArmor();
                 Npc.npcChooseWeapon();
                 Armor.chooseArmor();
