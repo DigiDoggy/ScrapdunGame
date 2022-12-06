@@ -36,6 +36,7 @@ public class Weapon extends Equipment {
             case 1:
                 //Player damage
                 Player.calculateWeaponDamage(damageFromWeapon(select));
+                Player.setCharacterWeapon(axe.nameOfWeapon);
                 System.out.println("You have " + axe.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
                 Main.loading(500);
                 System.out.println();
@@ -45,6 +46,7 @@ public class Weapon extends Equipment {
             case 2:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
                 System.out.println("You have " + bow.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Player.setCharacterWeapon(bow.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
 
@@ -53,6 +55,7 @@ public class Weapon extends Equipment {
             case 3:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
                 System.out.println("You have " + dagger.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Player.setCharacterWeapon(dagger.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
 
@@ -61,7 +64,7 @@ public class Weapon extends Equipment {
             case 4:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
                 System.out.println("You have " + sword.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
-
+                Player.setCharacterWeapon(sword.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
 
@@ -70,6 +73,7 @@ public class Weapon extends Equipment {
             case 5:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
                 System.out.println("You have " + staffOfSoul.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                Player.setCharacterWeapon(staffOfSoul.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
 

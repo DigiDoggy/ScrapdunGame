@@ -18,6 +18,7 @@ public class Main {
         Player.createName();
         action1();
 
+
     }
 
     public static void action1() {
@@ -34,6 +35,10 @@ public class Main {
 
         switch (choice) {
             case 1:
+                if (Player.getDefence()>1 && Player.getDamage()>10){
+                    Player.setDefence(1);
+                    Player.setDamage(10);
+                }
                 Npc.npcChoice();
                 Armor.chooseArmor();
 
