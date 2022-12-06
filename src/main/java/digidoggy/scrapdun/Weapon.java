@@ -91,6 +91,7 @@ public class Weapon extends Equipment {
         weaponList.add(staffOfSoul);
 
         int valueOfDamage = weaponList.get(select-1).dmg;
+        Player.setCharacterWeapon(weaponList.get(select-1).nameOfWeapon);
 
         return valueOfDamage;
     }

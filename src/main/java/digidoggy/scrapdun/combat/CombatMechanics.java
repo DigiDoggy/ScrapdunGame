@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class CombatMechanics {
 
+    public static boolean lose=false;
+    public static boolean win=false;
     public static boolean fightAction(String name, int hp, int dm, int def, boolean fight) {
 
         if (!fight) {
@@ -85,7 +87,9 @@ public class CombatMechanics {
                 System.out.println(name1 + " Winner!" + "\n");
 
                 if (name1.equals(Player.getCharacterName())) {
-                    Main.setWinnerName(Player.getCharacterName());
+                    win=true;
+                }else{
+                    lose=true;
                 }
 
 

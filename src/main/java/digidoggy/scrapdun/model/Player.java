@@ -23,13 +23,16 @@ public class Player {
 
     protected static String characterName = "Player";
     protected static int health = 100;
-    //    protected static String characterWeapon;
+    protected static String characterWeapon;
     public static int damage = 10;
     public static int defence = 1;
 
     public static ArrayList<String> playerBlockHit = new ArrayList<>();
 
     //Setter
+    public static void setCharacterWeapon(String characterWeapon) {
+        Player.characterWeapon = characterWeapon;
+    }
 
     public static void setHealth(int health) {
         Player.health = health;
