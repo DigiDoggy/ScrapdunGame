@@ -1,5 +1,7 @@
 ## 0.1.0
 - Configure Maven project
+- 2022.12.6 Work with SQL. 
+- Created package database.Config and Data. Method for creating a table createGameTable() and method insert() ащк write data to a table.
 - 2022.12.04 Game completed, need database and some rewrite in code of game(choice 2 in Player.action1() get addicted to him in combatMechanics).
 - Rewrote some methods in Main class (choose option, now all in one method). Completed Player and Npc block and hit. 
 - .Combat package - Fight class and CombatMechanics works correctly. 

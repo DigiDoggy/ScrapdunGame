@@ -67,7 +67,6 @@ public class Player {
                 "defence: " + defence);
     }
 
-    Player player = new Player(characterName, health, damage, defence);
     public static Scanner scanner = new Scanner(System.in);
 
     public static List<Armor> playerArmor = new ArrayList<>();
@@ -84,44 +83,7 @@ public class Player {
     }
 
     //method for user who find some item
-    public static void action1() {
 
-        System.out.println("1.Examine the corpses.");
-        System.out.println("2.Go check out the tent.");
-        System.out.println("3.Go fight!");
-        System.out.println("4.Database of the game");
-        System.out.println("5.It's time to finish the game!");
-
-
-        int choice = Main.choiceFromTo(1, 5);
-
-
-        switch (choice) {
-            case 1:
-                Npc.npcChooseArmor();
-                Npc.npcChooseWeapon();
-                Armor.chooseArmor();
-
-                break;
-            case 2:
-                System.out.println("You went inside the tent and saw a note.");
-                System.out.println("And remember the password to let go. \n" + "JavaEE18");
-                System.out.println();
-                action1();
-                break;
-            case 3:
-                Fight.fightMethod();
-                action1();
-                break;
-            case 4:
-                System.out.println("Maybe there will be a database"+"\n");
-                action1();
-                break;
-            case 5:
-                //leave the game
-                break;
-        }
-    }
 
     //calculate defence
     public static void calculateDefenceForPlayer(int defOfArmor) {

@@ -84,11 +84,6 @@ public class CombatMechanics {
 
                 System.out.println(name1 + " Winner!" + "\n");
 
-                if (name1.equals(Player.getCharacterName())) {
-                    Main.setWinnerName(Player.getCharacterName());
-                }
-
-
                 return fight;
             }
 
@@ -97,7 +92,7 @@ public class CombatMechanics {
     }
 
     public static int hit(int dm, int def) {
-        int hit = Math.round((dm/def)+15);
+        int hit = Math.round((dm/def) +15);
         int max = hit + 5;
         int min = hit - 1;
         hit = Main.Random((max - min) + 1);

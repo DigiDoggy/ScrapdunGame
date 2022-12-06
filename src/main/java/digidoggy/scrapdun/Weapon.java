@@ -40,7 +40,7 @@ public class Weapon extends Equipment {
                 Main.loading(500);
                 System.out.println();
 
-                Player.action1();
+                Main.action1();
                 break;
             case 2:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
@@ -48,7 +48,7 @@ public class Weapon extends Equipment {
                 Main.loading(500);
                 System.out.println();
 
-                Player.action1();
+                Main.action1();
                 break;
             case 3:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
@@ -56,7 +56,7 @@ public class Weapon extends Equipment {
                 Main.loading(500);
                 System.out.println();
 
-                Player.action1();
+                Main.action1();
                 break;
             case 4:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
@@ -65,7 +65,7 @@ public class Weapon extends Equipment {
                 Main.loading(500);
                 System.out.println();
 
-                Player.action1();
+                Main.action1();
                 break;
             case 5:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
@@ -73,7 +73,7 @@ public class Weapon extends Equipment {
                 Main.loading(500);
                 System.out.println();
 
-                Player.action1();
+                Main.action1();
 
                 break;
 
@@ -90,9 +90,7 @@ public class Weapon extends Equipment {
         weaponList.add(sword);
         weaponList.add(staffOfSoul);
 
-        int valueOfDamage = weaponList.get(select-1).dmg;
-
-        return valueOfDamage;
+        return weaponList.get(select-1).dmg;
     }
 
 

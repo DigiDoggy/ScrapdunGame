@@ -50,7 +50,6 @@ public class Npc{
                 "defence: " + npcDefence);
     }
 
-    Npc npc = new Npc(npcCharacterName, npcHealth, npcDamage,npcDefence);
 
     //Calculate defence for NPC
     public static void calculateDefenceForNPC(int defOfArmor){
