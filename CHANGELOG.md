@@ -1,11 +1,14 @@
 ## 0.1.0
 - Configure Maven project
-- 2022.12.6 Work with SQL. 
-- Created package database.Config and Data. Method for creating a table createGameTable() and method insert() ащк write data to a table.
-- 2022.12.04 Game completed, need database and some rewrite in code of game(choice 2 in Player.action1() get addicted to him in combatMechanics).
-- Rewrote some methods in Main class (choose option, now all in one method). Completed Player and Npc block and hit. 
+- 2022.12.6 
+- 1. Prepared a main class to work with the database.
+- 2. Work with SQL.
+- 3. Created package database.Config and Data. Method for creating a table createGameTable() and method insert() ащк write data to a table.
+- 2022.12.04 
+- 1. Game completed, need database and some rewrite in code of game(choice 2 in Player.action1() get addicted to him in combatMechanics).
+- 2. Rewrote some methods in Main class (choose option, now all in one method). Completed Player and Npc block and hit. 
 - .Combat package - Fight class and CombatMechanics works correctly. 
-- Fight class need to correct, -Method hitDamage().need to divide into parts (Methods), for easy code correction.
+- 3. Fight class need to correct, -Method hitDamage().need to divide into parts (Methods), for easy code correction.
 - 2022.12.03 Created class fight and combatMechanics have some mistakes in Fight.fightMethod() with ending of method .
 - Created methods for NPC class, now npc have defence and damage.All bad code removed (except for Character, KostjaTest, Test classes)
 - 2022.12.02 The first choice of the action1() method works. Calculating damage and defence for player is working. Created file JavaLearner.
