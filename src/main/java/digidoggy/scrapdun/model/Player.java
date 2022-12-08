@@ -23,7 +23,7 @@ public class Player {
 
     protected static String characterName = "Player";
     protected static int health = 100;
-    private static String characterWeapon;
+    private static String characterWeapon = "Fists";
     public static int damage = 10;
     public static int defence = 1;
 

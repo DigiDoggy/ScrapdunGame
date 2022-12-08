@@ -4,9 +4,11 @@ package digidoggy.scrapdun.combat;
 import digidoggy.scrapdun.model.Npc;
 import digidoggy.scrapdun.model.Player;
 
+import java.sql.SQLException;
+
 public class Fight {
 
-    public static void fightMethod() {
+    public static void fightMethod()throws SQLException {
 
 
         boolean fight = true;

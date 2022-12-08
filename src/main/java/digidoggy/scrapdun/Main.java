@@ -1,9 +1,11 @@
 package digidoggy.scrapdun;
 
 import digidoggy.scrapdun.combat.Fight;
+import digidoggy.scrapdun.dataBase.Data;
 import digidoggy.scrapdun.model.Npc;
 import digidoggy.scrapdun.model.Player;
 
+import java.sql.SQLException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,16 +14,16 @@ public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws SQLException {
 
-        greetings();
-        Player.createName();
+//        greetings();
+//        Player.createName();
         action1();
 
 
     }
 
-    public static void action1() {
+    public static void action1()throws SQLException {
 
         System.out.println("1.Examine the corpses.");
         System.out.println("2.Go check out the tent.");
@@ -33,7 +35,7 @@ public class Main {
         int choice = Main.choiceFromTo(1, 5);
 
 
-        switch (choice) {
+        switch (choice){
             case 1:
                 if (Player.getDefence()>1 && Player.getDamage()>10){
                     Player.setDefence(1);
@@ -44,9 +46,11 @@ public class Main {
 
                 break;
             case 2:
+                Player.createName();
                 System.out.println("You went inside the tent and saw a note.");
                 System.out.println("And remember the password to let go. \n" + "JavaEE18");
                 System.out.println();
+
                 action1();
                 break;
             case 3:
@@ -54,6 +58,12 @@ public class Main {
                 action1();
                 break;
             case 4:
+                try {
+                    Data.insert();
+                    Data.dataOptions();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("Maybe there will be a database"+"\n");
                 action1();
                 break;

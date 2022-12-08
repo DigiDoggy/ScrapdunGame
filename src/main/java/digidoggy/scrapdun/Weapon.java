@@ -3,6 +3,7 @@ package digidoggy.scrapdun;
 
 import digidoggy.scrapdun.model.Player;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Weapon extends Equipment {
     protected static Weapon bow = new Weapon("Bow of Light", "Bow", 60, 20);
     protected static Weapon dagger = new Weapon("Knife of Blood", "Dagger", 24, 46);
 
-    public static void choseWeapon() {
+    public static void choseWeapon()throws SQLException {
         System.out.println("While collecting the set, you saw the weapon that you would like to receive.");
 
         System.out.println("1. " + axe.nameOfWeapon);

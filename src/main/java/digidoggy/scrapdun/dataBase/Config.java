@@ -9,7 +9,7 @@ public class Config {
     protected static String userName = "root";
     protected static String password = "12345678Java!";
     protected static Connection con;
-    public static Statement statement;
+    protected static Statement statement;
 
 
 }

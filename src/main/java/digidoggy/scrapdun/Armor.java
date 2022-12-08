@@ -2,6 +2,7 @@ package digidoggy.scrapdun;
 
 import digidoggy.scrapdun.model.Player;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Armor extends Equipment {
     protected static Armor armorMajorBoots = new Armor("Major Arcana Boots", 15, "Cotton", "Boots");
 
     //choose your armor
-    public static void chooseArmor() {
+    public static void chooseArmor()throws SQLException {
         System.out.println("You examined the corpse and found:" + "\n" +
                 armorLonelyChest.nameOfArmor + "\n" +
                 armorShadowGloves.nameOfArmor + "\n" +
@@ -49,7 +50,7 @@ public class Armor extends Equipment {
 
         int select = Main.choiceFromTo( 1, 3);
 
-        switch (select) {
+        switch (select){
             case 1:
                 System.out.println("You have Heavy armor");
                 Player.playerArmor.add(armorLonelyChest);
