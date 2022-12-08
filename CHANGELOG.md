@@ -1,7 +1,11 @@
 ## 0.1.0
 - Configure Maven project
-- 2022.12.6
-- 1. Work with data completed. If i will have some time, then i create statistic (top 5).
+- 2022.12.9
+- Created Potion, and methods for use it.
+- All text colored
+- Game completed.
+- 2022.12.7-8
+- 1. Work with data completed. If i`ll have some time, then i create statistic (top 5).
 - 2. In Class CombatMechanics created method for Health view
 - 2022.12.6 
 - 1. Prepared a main class to work with the database.

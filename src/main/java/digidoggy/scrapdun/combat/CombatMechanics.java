@@ -39,14 +39,14 @@ public class CombatMechanics {
 
             if (name.equals(Player.getCharacterName())) {
                 // Player Attack
-                System.out.println("Where do you attack?");
-                blockAndHitForPlayer();
+                System.out.println(Color.ANSI_CYAN+"Where do you attack?"+Color.ANSI_RESET);
+                blockAndHitForPlayer(hp);
                 //NpcBlock
                 blockAndHitForNpc();
                 //comparison - Player attack and NPC block
                 if (Player.playerBlockHit.get(0).equals(Npc.npcBlockHit.get(0))) {
 
-                    System.out.println("\n" + "Attack blocked" + "\n");
+                    System.out.println("\n"+Color.ANSI_YELLOW+ "Attack blocked" + Color.ANSI_RESET+"\n");
 
                     Player.playerBlockHit.clear();
                     Npc.npcBlockHit.clear();
@@ -64,11 +64,11 @@ public class CombatMechanics {
                 //Npc attack
                 blockAndHitForNpc();
                 //Player Block
-                System.out.println("What do you want to protect?" + "\n");
-                blockAndHitForPlayer();
+                System.out.println(Color.ANSI_CYAN+"What do you want to protect?" + Color.ANSI_RESET+ "\n");
+                blockAndHitForPlayer(hp);
                 //comparison - NPC attack and Player block
                 if (Player.playerBlockHit.get(0).equals(Npc.npcBlockHit.get(0))) {
-                    System.out.println("\n" + "Attack blocked" + "\n");
+                    System.out.println("\n" + Color.ANSI_YELLOW+"Attack blocked" + Color.ANSI_RESET+"\n");
 
 
                     Player.playerBlockHit.clear();
@@ -86,18 +86,18 @@ public class CombatMechanics {
                 name2 = Player.getCharacterName();
             }
 
-            System.out.println(name1 + " Hit " + damage);
+            System.out.println(Color.ANSI_RED+name1 + " Hit " + damage+Color.ANSI_RESET);
 
             if (hp > 0) {
                 health(hp);
-                System.out.println(name2 + " health :" + hp);
+                System.out.println(Color.ANSI_GREEN+name2 + " health :" + hp+Color.ANSI_RESET);
             } else {
                 hp = 0;
-                System.out.println(name2 + " died.");
+                System.out.println(Color.ANSI_RED+name2 + " died."+Color.ANSI_RESET);
                 fight = false;
 
 
-                System.out.println(name1 + " Winner!" + "\n");
+                System.out.println(Color.ANSI_CYAN+name1 + " Winner!" + "\n"+Color.ANSI_RESET);
 
                 if (name1.equals(Player.getCharacterName())) {
                     win = 1;
@@ -110,7 +110,6 @@ public class CombatMechanics {
 
                 Data.createGameTable();
                 Data.insert();
-                Data.read();
 
 
                 return fight;
@@ -121,7 +120,15 @@ public class CombatMechanics {
     }
 
     public static int hit(int dm, int def) {
-        int hit = Math.round((dm / def) + 15);
+        int hit=0;
+        if(def>200){
+            hit=(dm*50)/100;
+        }else if(def>150){
+            hit=(dm*60)/100;
+        }else{
+            hit=(dm*70)/100;
+        }
+
         int max = hit + 5;
         int min = hit - 1;
         hit = Main.Random((max - min) + 1);
@@ -153,13 +160,19 @@ public class CombatMechanics {
 
     //Block and hit for Player
 
-    public static void blockAndHitForPlayer() {
+    public static int blockAndHitForPlayer(int hp) {
+        int secondChoice=4;
         System.out.println("1.Head" + "\n" +
                 "2.Body" + "\n" +
                 "3.Hands" + "\n" +
                 "4.Legs" + "\n");
+        if (Player.isPotion() && hp<80){
+            System.out.print(Color.ANSI_GREEN+"5.Drink the potion .\n"+Color.ANSI_RESET);
+            secondChoice=5;
 
-        int choice = Main.choiceFromTo(1, 4);
+        }
+
+        int choice = Main.choiceFromTo(1, secondChoice);
 
 
         switch (choice) {
@@ -175,7 +188,25 @@ public class CombatMechanics {
             case 4:
                 Player.playerBlockHit.add((String) partsForHitAndBlock().get(3));
                 break;
+            case 5:
+                if(Player.isPotion()){
+                    takingThePotion(hp);
+                    blockAndHitForPlayer(hp);
+                }
+                break;
         }
+        return hp;
+    }
+    static void takingThePotion(int hp){
+        hp+=(hp*20)/100;
+        if (hp>100){
+            hp=100;
+        }
+
+        System.out.println(Color.ANSI_GREEN+"You feel a little better. \n"+
+                "Now your health: " +hp+Color.ANSI_RESET);
+        Player.setPotion(false);
+        System.out.println(Color.ANSI_YELLOW+"Your choice..."+Color.ANSI_RESET);
     }
 
 

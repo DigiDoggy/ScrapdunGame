@@ -1,5 +1,6 @@
 package digidoggy.scrapdun;
 
+import digidoggy.scrapdun.color.Color;
 import digidoggy.scrapdun.combat.Fight;
 import digidoggy.scrapdun.dataBase.Data;
 import digidoggy.scrapdun.model.Npc;
@@ -25,7 +26,7 @@ public class Main {
 
     public static void action1()throws SQLException {
 
-        System.out.println("1.Examine the corpses.");
+        System.out.println( "1.Examine the corpses.");
         System.out.println("2.Go check out the tent.");
         System.out.println("3.Go fight!");
         System.out.println("4.Database of the game");
@@ -46,9 +47,7 @@ public class Main {
 
                 break;
             case 2:
-                Player.createName();
-                System.out.println("You went inside the tent and saw a note.");
-                System.out.println("And remember the password to let go. \n" + "JavaEE18");
+                Player.getToTheTent();
                 System.out.println();
 
                 action1();
@@ -58,13 +57,8 @@ public class Main {
                 action1();
                 break;
             case 4:
-                try {
-                    Data.insert();
-                    Data.dataOptions();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println("Maybe there will be a database"+"\n");
+
+                Data.dataOptions();
                 action1();
                 break;
             case 5:
@@ -77,8 +71,8 @@ public class Main {
 
     // Game greetings with delay
     public static void greetings() {
-        String hello = "Добро пожаловать в игру.";
-        String welcome = "Welcome to the game.";
+        String hello = Color.ANSI_PURPLE+" Laipni lūdzam spēlē!"+Color.ANSI_RESET;
+        String welcome = Color.ANSI_CYAN+"Welcome to the game."+Color.ANSI_RESET;
         String tab = "\t";
 //tab for writing text in the centre
         for (int i = 10; i >= 0; i--) {
@@ -135,7 +129,7 @@ public class Main {
             try {
                 number = scanner.nextInt();
             } catch (Exception e) {
-                System.out.printf("%s - is not an integer.%n", scanner.next());
+                System.out.printf(Color.ANSI_WHITE+"%s - is not an integer.%n"+Color.ANSI_RESET, scanner.next());
                 numb = 1;
             }
         } while (numb == 1);

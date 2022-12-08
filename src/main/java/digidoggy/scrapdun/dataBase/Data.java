@@ -1,6 +1,7 @@
 package digidoggy.scrapdun.dataBase;
 
 import digidoggy.scrapdun.Main;
+import digidoggy.scrapdun.color.Color;
 import digidoggy.scrapdun.combat.CombatMechanics;
 import digidoggy.scrapdun.model.Player;
 
@@ -43,19 +44,19 @@ public class Data extends Config {
 
     public static void createGameTable() throws SQLException {
 
-        try(Connection con = DriverManager.getConnection(dbURL, userName, password)) {
+        try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
 
-        String SQL = "CREATE TABLE IF NOT EXISTS SCRAPDUN " +
-                "(id INTEGER AUTO_INCREMENT NOT NULL, " +
-                "name VARCHAR(60) NOT NULL, " +
-                "weaponName VARCHAR(100) NOT NULL," +
-                "win boolean not null , " +
-                "lose boolean not null ," +
-                " PRIMARY KEY (id))";
-        Statement statement = con.createStatement();
-        statement.executeUpdate(SQL);
+            String SQL = "CREATE TABLE IF NOT EXISTS SCRAPDUN " +
+                    "(id INTEGER AUTO_INCREMENT NOT NULL, " +
+                    "name VARCHAR(60) NOT NULL, " +
+                    "weaponName VARCHAR(100) NOT NULL," +
+                    "win boolean not null , " +
+                    "lose boolean not null ," +
+                    " PRIMARY KEY (id))";
+            Statement statement = con.createStatement();
+            statement.executeUpdate(SQL);
 
-    }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -85,7 +86,7 @@ public class Data extends Config {
     }
 
     //top  5
-    public static void statisticTop5()throws SQLException{
+    public static void statisticTop5() throws SQLException {
         try (Connection connection = DriverManager.getConnection(dbURL, userName, password)) {
 
             String sql = "Select NAME, COUNT(WIN), COUNT(LOSE) FROM SCRAPDUN ORDER BY COUNT(WIN)";
@@ -98,7 +99,6 @@ public class Data extends Config {
                 String lose = "lesions: " + resultSet.getString("lose");
 
 
-
                 System.out.println("##################" + "\n" + name + "\n" + win + "\n" + lose + "\n");
             }
 
@@ -106,6 +106,7 @@ public class Data extends Config {
             e.printStackTrace();
         }
     }
+
     public static void read() {
 
 
@@ -125,19 +126,23 @@ public class Data extends Config {
                 String lose = "Number of lesions: " + resultSet.getString("lose");
 
 
-
-                System.out.println("##################" + "\n" + id + "\n" + name + "\n" + win + "\n" + lose + "\n" + weaponName);
+                System.out.println("##################" + "\n" + id + "\n" + name + "\n" + win + "\n" + lose +
+                        "\n" + weaponName + "\n" + "##################" + "\n");
             }
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+
     }
 
     public static void dataOptions() throws SQLException {
-        System.out.println("1.Read data");
+        createGameTable();
+        System.out.println(Color.ANSI_WHITE + "1.Read data");
         System.out.println("2.Delete all data");
-        System.out.println("2.Back to menu");
+        System.out.println("3.Back to menu" + Color.ANSI_RESET);
 
         int choice = Main.choiceFromTo(1, 3);
 
@@ -177,11 +182,11 @@ public class Data extends Config {
         return false;
     }
 
-public static void notExistsDataThenCreate()throws SQLException{
-        if(!tableExistsSQL("scrapdun")){
+    public static void notExistsDataThenCreate() throws SQLException {
+        if (!tableExistsSQL("scrapdun")) {
             createGameTable();
         }
-}
+    }
 
 
 }

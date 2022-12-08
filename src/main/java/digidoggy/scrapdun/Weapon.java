@@ -1,6 +1,7 @@
 package digidoggy.scrapdun;
 
 
+import digidoggy.scrapdun.color.Color;
 import digidoggy.scrapdun.model.Player;
 
 import java.sql.SQLException;
@@ -21,8 +22,8 @@ public class Weapon extends Equipment {
     protected static Weapon bow = new Weapon("Bow of Light", "Bow", 60, 20);
     protected static Weapon dagger = new Weapon("Knife of Blood", "Dagger", 24, 46);
 
-    public static void choseWeapon()throws SQLException {
-        System.out.println("While collecting the set, you saw the weapon that you would like to receive.");
+    public static void choseWeapon() throws SQLException {
+        System.out.println( "While collecting the set, you saw the weapon that you would like to receive.");
 
         System.out.println("1. " + axe.nameOfWeapon);
         System.out.println("2. " + bow.nameOfWeapon);
@@ -38,7 +39,7 @@ public class Weapon extends Equipment {
                 //Player damage
                 Player.calculateWeaponDamage(damageFromWeapon(select));
                 Player.setCharacterWeapon(axe.nameOfWeapon);
-                System.out.println("You have " + axe.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                System.out.println("You have " + axe.nameOfWeapon + "\n" +Color.ANSI_GREEN +  "Your damage now " + Player.damage + Color.ANSI_RESET);
                 Main.loading(500);
                 System.out.println();
 
@@ -46,7 +47,7 @@ public class Weapon extends Equipment {
                 break;
             case 2:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
-                System.out.println("You have " + bow.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                System.out.println(Color.ANSI_GREEN + "You have " + bow.nameOfWeapon + "\n" + "Your damage now " + Player.damage + Color.ANSI_RESET);
                 Player.setCharacterWeapon(bow.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
@@ -55,7 +56,7 @@ public class Weapon extends Equipment {
                 break;
             case 3:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
-                System.out.println("You have " + dagger.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                System.out.println(Color.ANSI_GREEN + "You have " + dagger.nameOfWeapon + "\n" + "Your damage now " + Player.damage + Color.ANSI_RESET);
                 Player.setCharacterWeapon(dagger.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
@@ -64,7 +65,7 @@ public class Weapon extends Equipment {
                 break;
             case 4:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
-                System.out.println("You have " + sword.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                System.out.println(Color.ANSI_GREEN + "You have " + sword.nameOfWeapon + "\n" + "Your damage now " + Player.damage + Color.ANSI_RESET);
                 Player.setCharacterWeapon(sword.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
@@ -73,7 +74,7 @@ public class Weapon extends Equipment {
                 break;
             case 5:
                 Player.calculateWeaponDamage(damageFromWeapon(select));
-                System.out.println("You have " + staffOfSoul.nameOfWeapon + "\n" + "Your damage now " + Player.damage);
+                System.out.println(Color.ANSI_GREEN + "You have " + staffOfSoul.nameOfWeapon + "\n" + "Your damage now " + Player.damage + Color.ANSI_RESET);
                 Player.setCharacterWeapon(staffOfSoul.nameOfWeapon);
                 Main.loading(500);
                 System.out.println();
@@ -95,7 +96,7 @@ public class Weapon extends Equipment {
         weaponList.add(sword);
         weaponList.add(staffOfSoul);
 
-        return weaponList.get(select-1).dmg;
+        return weaponList.get(select - 1).dmg;
     }
 
 

@@ -2,8 +2,10 @@ package digidoggy.scrapdun.model;
 
 import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
+import digidoggy.scrapdun.color.Color;
 import digidoggy.scrapdun.combat.Fight;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,9 +29,17 @@ public class Player {
     public static int damage = 10;
     public static int defence = 1;
 
+    public static boolean potion = false;
+
     public static ArrayList<String> playerBlockHit = new ArrayList<>();
 
     //Setter
+
+
+    public static void setPotion(boolean potion) {
+        Player.potion = potion;
+    }
+
     public static void setCharacterWeapon(String characterWeapon) {
         Player.characterWeapon = characterWeapon;
     }
@@ -47,6 +57,11 @@ public class Player {
     }
 
     //Getters
+
+
+    public static boolean isPotion() {
+        return potion;
+    }
 
     public static String getCharacterWeapon() {
         return characterWeapon;
@@ -71,17 +86,17 @@ public class Player {
     }
 
 
-    public Player(String characterName, int health, int damage, int defence) {
-        Player.characterName = characterName;
-        Player.health = health;
-        Player.damage = damage;
-        Player.defence = defence;
-
-        System.out.println("characterName: " + characterName + "\n" +
-                "health: " + health + "\n" +
-                "damage: " + damage + "\n" +
-                "defence: " + defence);
-    }
+//    public Player(String characterName, int health, int damage, int defence) {
+//        Player.characterName = characterName;
+//        Player.health = health;
+//        Player.damage = damage;
+//        Player.defence = defence;
+//
+//        System.out.println("characterName: " + characterName + "\n" +
+//                "health: " + health + "\n" +
+//                "damage: " + damage + "\n" +
+//                "defence: " + defence);
+//    }
 
     public static Scanner scanner = new Scanner(System.in);
 
@@ -91,8 +106,8 @@ public class Player {
     // find out the name of the player
     public static void createName() {
 
-        System.out.println("Hello new hero.");
-        System.out.println("Enter your name: ");
+        System.out.println(Color.ANSI_WHITE + "Hello new hero.");
+        System.out.println("Enter your name: " + Color.ANSI_RESET);
         characterName = scanner.nextLine().trim();
 
 
@@ -107,6 +122,26 @@ public class Player {
 
     public static void calculateWeaponDamage(int weaponDamage) {
         Player.damage += weaponDamage;
+    }
+
+    public static void getToTheTent() throws SQLException {
+        if (Player.isPotion() == true) {
+            System.out.println("You already have the potion.\n");
+            Main.action1();
+        }
+        System.out.println("On the table, you saw a bottle of potion, on which it was written \n" +
+                Color.ANSI_WHITE + "-\"Use if you want to heal\"" + "\n" + Color.ANSI_RESET);
+        System.out.println( "Would you like to take a bottle? y/n" );
+        char choice;
+        choice = Main.scanner.next().charAt(0);
+        if (choice == 'y' || choice == 'Y') {
+            Player.setPotion(true);
+            System.out.println(Color.ANSI_GREEN + "You took the bottle.\n" + Color.ANSI_RESET);
+        } else if (choice == 'n' || choice == 'N') {
+            System.out.println(Color.ANSI_WHITE + "You refused the potion and left the tent. \n" + Color.ANSI_RESET);
+        }
+
+        Main.action1();
     }
 
 

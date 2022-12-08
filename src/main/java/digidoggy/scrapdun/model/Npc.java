@@ -38,19 +38,6 @@ public class Npc{
         return npcDefence;
     }
 
-    public Npc(String npcCharacterName, int health, int damage, int defence){
-        Npc.npcCharacterName =npcCharacterName;
-        Npc.npcHealth =health;
-        Npc.npcDamage = damage;
-        Npc.npcDefence = defence;
-
-        System.out.println("characterName: " + npcCharacterName + "\n" +
-                "health: " + npcHealth + "\n" +
-                "damage: " + npcDamage + "\n" +
-                "defence: " + npcDefence);
-    }
-
-
     //Calculate defence for NPC
     public static void calculateDefenceForNPC(int defOfArmor){
         Npc.npcDefence+=defOfArmor;

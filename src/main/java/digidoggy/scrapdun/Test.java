@@ -11,7 +11,8 @@ public class Test {
 
     public static void main(String[] args) {
 
-        CombatMechanics.health(50);
+//        Main.greetings();
+//        CombatMechanics.health(50);
 //        System.out.println("----- -\\/-\\/- /\\/\\/\\/");
     }
 
