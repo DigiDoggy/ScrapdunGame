@@ -10,24 +10,6 @@ import java.sql.*;
 public class Data extends Config {
 
 
-    public static void main(String[] args) {
-
-
-        try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
-//        drop();
-
-            statisticTop5();
-//            insert();
-//            read();
-            System.out.println(tableExistsSQL("scrapdun"));
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Table Scrapdun, not dropped");
-        }
-    }
-
     public static void drop() {
 
         try (Connection connection = DriverManager.getConnection(dbURL, userName, password)) {
@@ -42,7 +24,7 @@ public class Data extends Config {
     }
 
 
-    public static void createGameTable() throws SQLException {
+    public static void createGameTable(){
 
         try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
 
@@ -62,7 +44,7 @@ public class Data extends Config {
 
     }
 
-    public static void insert() throws SQLException {
+    public static void insert(){
         try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
 
 
@@ -86,26 +68,26 @@ public class Data extends Config {
     }
 
     //top  5
-    public static void statisticTop5() throws SQLException {
-        try (Connection connection = DriverManager.getConnection(dbURL, userName, password)) {
-
-            String sql = "Select NAME, COUNT(WIN), COUNT(LOSE) FROM SCRAPDUN ORDER BY COUNT(WIN)";
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next()) {
-                String name = "Player name: " + resultSet.getString("name");
-                String win = "wins: " + resultSet.getString("win");
-                String lose = "lesions: " + resultSet.getString("lose");
-
-
-                System.out.println("##################" + "\n" + name + "\n" + win + "\n" + lose + "\n");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void statisticTop5(){
+//        try (Connection connection = DriverManager.getConnection(dbURL, userName, password)) {
+//
+//            String sql = "Select NAME, COUNT(WIN), COUNT(LOSE) FROM SCRAPDUN ORDER BY COUNT(WIN)";
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(sql);
+//
+//            while (resultSet.next()) {
+//                String name = "Player name: " + resultSet.getString("name");
+//                String win = "wins: " + resultSet.getString("win");
+//                String lose = "lesions: " + resultSet.getString("lose");
+//
+//
+//                System.out.println("##################" + "\n" + name + "\n" + win + "\n" + lose + "\n");
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void read() {
 
@@ -164,29 +146,29 @@ public class Data extends Config {
     }
 
     // table checking
-    static boolean tableExistsSQL(String tableName) {
-        try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT count(*) "
-                    + "FROM information_schema.tables "
-                    + "WHERE table_name = ?"
-                    + "LIMIT 1;");
-            preparedStatement.setString(1, tableName);
+//    static boolean tableExistsSQL(String tableName) {
+//        try (Connection con = DriverManager.getConnection(dbURL, userName, password)) {
+//            PreparedStatement preparedStatement = con.prepareStatement("SELECT count(*) "
+//                    + "FROM information_schema.tables "
+//                    + "WHERE table_name = ?"
+//                    + "LIMIT 1;");
+//            preparedStatement.setString(1, tableName);
+//
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            resultSet.next();
+//            return resultSet.getInt(1) != 0;
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return false;
+//    }
 
-            ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            return resultSet.getInt(1) != 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public static void notExistsDataThenCreate() throws SQLException {
-        if (!tableExistsSQL("scrapdun")) {
-            createGameTable();
-        }
-    }
+//    public static void notExistsDataThenCreate() throws SQLException {
+//        if (!tableExistsSQL("scrapdun")) {
+//            createGameTable();
+//        }
+//    }
 
 
 }

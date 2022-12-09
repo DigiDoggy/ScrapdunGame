@@ -3,7 +3,6 @@ package digidoggy.scrapdun.model;
 import digidoggy.scrapdun.Armor;
 import digidoggy.scrapdun.Main;
 import digidoggy.scrapdun.color.Color;
-import digidoggy.scrapdun.combat.Fight;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -86,18 +85,6 @@ public class Player {
     }
 
 
-//    public Player(String characterName, int health, int damage, int defence) {
-//        Player.characterName = characterName;
-//        Player.health = health;
-//        Player.damage = damage;
-//        Player.defence = defence;
-//
-//        System.out.println("characterName: " + characterName + "\n" +
-//                "health: " + health + "\n" +
-//                "damage: " + damage + "\n" +
-//                "defence: " + defence);
-//    }
-
     public static Scanner scanner = new Scanner(System.in);
 
     public static List<Armor> playerArmor = new ArrayList<>();
@@ -125,7 +112,7 @@ public class Player {
     }
 
     public static void getToTheTent() throws SQLException {
-        if (Player.isPotion() == true) {
+        if (Player.isPotion()) {
             System.out.println("You already have the potion.\n");
             Main.action1();
         }

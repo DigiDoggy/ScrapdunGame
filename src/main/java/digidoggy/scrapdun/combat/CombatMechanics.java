@@ -1,7 +1,6 @@
 package digidoggy.scrapdun.combat;
 
 
-import com.sun.source.tree.IfTree;
 import digidoggy.scrapdun.Main;
 import digidoggy.scrapdun.color.Color;
 import digidoggy.scrapdun.dataBase.Data;
@@ -27,7 +26,7 @@ public class CombatMechanics {
 
     public static boolean fightAction(String name, int hp, int dm, int def, boolean fight) throws SQLException {
 
-        if (!fight) {
+        if(!fight) {
             return fight;
         } else {
 
@@ -120,7 +119,7 @@ public class CombatMechanics {
     }
 
     public static int hit(int dm, int def) {
-        int hit=0;
+        int hit;
         if(def>200){
             hit=(dm*50)/100;
         }else if(def>150){
