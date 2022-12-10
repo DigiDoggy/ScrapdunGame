@@ -9,16 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/*
- TODO
-  0.Begin story about player (prison, dungeon etc.)
-  1. Player name  ( need for final result)
-  2. Player hp
-  3. Choice of ammunition based.
-  4. Method of choice(Hit/Block)
- 5.
 
- */
 public class Player {
 
 
@@ -119,12 +110,20 @@ public class Player {
         System.out.println("On the table, you saw a bottle of potion, on which it was written \n" +
                 Color.ANSI_WHITE + "-\"Use if you want to heal\"" + "\n" + Color.ANSI_RESET);
         System.out.println( "Would you like to take a bottle? y/n" );
+
         char choice;
-        choice = Main.scanner.next().charAt(0);
-        if (choice == 'y' || choice == 'Y') {
+
+        do {
+            choice = Main.scanner.next().toLowerCase().charAt(0);
+            if(choice!='y' && choice!='n'){
+                System.out.println("Incorrect enter. It must be 'y' or 'n'");
+            }
+        }while (choice!='y' && choice!='n');
+
+        if (choice == 'y' ) {
             Player.setPotion(true);
             System.out.println(Color.ANSI_GREEN + "You took the bottle.\n" + Color.ANSI_RESET);
-        } else if (choice == 'n' || choice == 'N') {
+        } else  {
             System.out.println(Color.ANSI_WHITE + "You refused the potion and left the tent. \n" + Color.ANSI_RESET);
         }
 

@@ -18,8 +18,8 @@ public class Main {
     public static void main(String[] args)throws SQLException {
 
         // todo ALL COMPLETED
-        greetings();
-        Player.createName();
+//        greetings();
+//        Player.createName();
         action1();
 
 
