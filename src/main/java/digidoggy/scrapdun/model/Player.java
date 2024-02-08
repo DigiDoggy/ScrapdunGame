@@ -1,134 +1,95 @@
 package digidoggy.scrapdun.model;
 
-import digidoggy.scrapdun.Armor;
-import digidoggy.scrapdun.Main;
-import digidoggy.scrapdun.color.Color;
+import digidoggy.scrapdun.combat.combat_Strategy.CombatStrategy;
+import digidoggy.scrapdun.consol.ConsoleOutput;
+import digidoggy.scrapdun.outFit.Armor;
+import digidoggy.scrapdun.weapens.Weapon;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+public abstract class Player {
+    protected String name;
+    protected int health;
+    protected int damage;
+    protected int defense;
+    protected boolean potion;
+    protected ConsoleOutput consoleOutput;
+    protected List<Armor> playerArmor;
+    protected Weapon weapon;
+    protected CombatStrategy combatActionStrategy;
 
 
-public class Player {
+    Player(String name, int health, int damage, int defense) {
+        this.name = name;
+        this.health = 100;
+        this.damage = damage;
+        this.defense = defense;
+        potion = false;
+        this.consoleOutput = new ConsoleOutput();
+        this.playerArmor = new ArrayList<>();
+        this.weapon = new Weapon("First", 10, 1);
 
-
-    protected static String characterName = "Player";
-    protected static int health = 100;
-    private static String characterWeapon = "Fists";
-    public static int damage = 10;
-    public static int defence = 1;
-
-    public static boolean potion = false;
-
-    public static ArrayList<String> playerBlockHit = new ArrayList<>();
-
-    //Setter
-
-
-    public static void setPotion(boolean potion) {
-        Player.potion = potion;
     }
 
-    public static void setCharacterWeapon(String characterWeapon) {
-        Player.characterWeapon = characterWeapon;
+
+    //Getters and setters
+
+    public Weapon getWeapon() {
+        return weapon;
     }
 
-    public static void setDamage(int damage) {
-        Player.damage = damage;
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+        this.setDamage(weapon.getDamage());
     }
 
-    public static void setDefence(int defence) {
-        Player.defence = defence;
+    public List<Armor> getPlayerArmor() {
+        return playerArmor;
     }
 
-    public static void setHealth(int health) {
-        Player.health = health;
+    public void setPlayerArmor(List<Armor> playerArmor) {
+        this.playerArmor = playerArmor;
     }
 
-    //Getters
-
-
-    public static boolean isPotion() {
+    public boolean isPotion() {
         return potion;
     }
 
-    public static String getCharacterWeapon() {
-        return characterWeapon;
+    public void setPotion(boolean potion) {
+        this.potion = potion;
     }
 
-    public static String getCharacterName() {
-        return characterName;
+    public String getName() {
+        return name;
     }
 
-    public static int getHealth() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
-    public static int getDamage() {
+    public int getDamage() {
         return damage;
     }
 
-
-    public static int getDefence() {
-        return defence;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
-
-    public static Scanner scanner = new Scanner(System.in);
-
-    public static List<Armor> playerArmor = new ArrayList<>();
-
-
-    // find out the name of the player
-    public static void createName() {
-
-        System.out.println(Color.ANSI_WHITE + "Hello new hero.");
-        System.out.println("Enter your name: " + Color.ANSI_RESET);
-        characterName = scanner.nextLine().trim();
-
-
+    public int getDefense() {
+        return defense;
     }
 
-    //calculate defence
-    public static void calculateDefenceForPlayer(int defOfArmor) {
-        Player.defence += defOfArmor;
+    public void setDefense(int defence) {
+        this.defense = defence;
     }
-
-    //calculate damage
-
-    public static void calculateWeaponDamage(int weaponDamage) {
-        Player.damage += weaponDamage;
-    }
-
-    public static void getToTheTent() throws SQLException {
-        if (Player.isPotion()) {
-            System.out.println("You already have the potion.\n");
-            Main.action1();
-        }
-        System.out.println("On the table, you saw a bottle of potion, on which it was written \n" +
-                Color.ANSI_WHITE + "-\"Use if you want to heal\"" + "\n" + Color.ANSI_RESET);
-        System.out.println( "Would you like to take a bottle? y/n" );
-
-        char choice;
-
-        do {
-            choice = Main.scanner.next().toLowerCase().charAt(0);
-            if(choice!='y' && choice!='n'){
-                System.out.println("Incorrect enter. It must be 'y' or 'n'");
-            }
-        }while (choice!='y' && choice!='n');
-
-        if (choice == 'y' ) {
-            Player.setPotion(true);
-            System.out.println(Color.ANSI_GREEN + "You took the bottle.\n" + Color.ANSI_RESET);
-        } else  {
-            System.out.println(Color.ANSI_WHITE + "You refused the potion and left the tent. \n" + Color.ANSI_RESET);
-        }
-
-        Main.action1();
-    }
-
 
 }

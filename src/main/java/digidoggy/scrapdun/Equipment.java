@@ -10,19 +10,17 @@ abstract class Equipment {
     protected String type;
     protected String position;
     //weapon
-    protected  String nameOfWeapon;
+    protected String nameOfWeapon;
     protected String typeOfWeapon;
     protected int dmg;
-    protected  int crtCh;
+    protected int crtCh;
 
-    //constructor armor
-    public Equipment(String nameOfArmor, int def, String type,String position) {
+    public Equipment(String nameOfArmor, int def, String type, String position) {
         this.nameOfArmor = nameOfArmor;
         this.def = def;
         this.type = type;
-        this.position= position;
+        this.position = position;
     }
-    //constructor weapon
 
     public Equipment(String nameOfWeapon, String typeOfWeapon, int dmg, int crtCh) {
         this.nameOfWeapon = nameOfWeapon;
@@ -35,14 +33,14 @@ abstract class Equipment {
 
     @Override
     public String toString() {
-        if (nameOfArmor==null){
+        if (nameOfArmor == null) {
             return "Equipment{" +
                     " nameOfWeapon='" + nameOfWeapon + '\'' +
                     ", typeOfWeapon='" + typeOfWeapon + '\'' +
                     ", dmg=" + dmg +
                     ", crtCh=" + crtCh +
                     '}';
-        }else {
+        } else {
             return "Equipment{" +
                     "nameOfArmor='" + nameOfArmor + '\'' +
                     ", def=" + def +
